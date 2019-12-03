@@ -173,16 +173,35 @@ class Vegetable {
 			// right corner over it, both over it, left over it
 			// make sure the veggie is alive and the player is falling down
 			if (((parseInt(p.rep.style.left) + p.rep.clientWidth > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) < parseInt(this.rep.style.left)) ||
-			 (parseInt(p.rep.style.left) > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) + p.rep.clientWidth < parseInt(this.rep.style.left) + this.rep.clientWidth) ||
-			 (parseInt(p.rep.style.left) > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) < parseInt(this.rep.style.left) + this.rep.clientWidth)) &&
-			 (p.velocityY > 0 && this.alive)) {
+			(parseInt(p.rep.style.left) > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) + p.rep.clientWidth < parseInt(this.rep.style.left) + this.rep.clientWidth) ||
+			(parseInt(p.rep.style.left) > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) < parseInt(this.rep.style.left) + this.rep.clientWidth)) &&
+			(p.velocityY > 0 && this.alive)) {
 				//console.log('HIT');
 				// kill the vegetable and increase player's acceleration
 				p.velocityY = -1 * p.maxVelY;
 				vm.kill(this.id);
-			 }
+			}
+			return;
 		}
 
+		// if the player is running into the left side of the veg
+		// aka if (the left side is inside the left) and (the right isnt) and (the bottom is below top and above bottom) or (the top is below top and above bottom)
+		if (( parseInt(p.rep.style.left) > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) < parseInt(this.rep.style.left) + this.rep.clientWidth ) &&
+		(( (parseInt(p.rep.style.top) < parseInt(this.rep.style.top) && parseInt(p.rep.style.top) > parseInt(this.rep.style.top) + this.rep.clientHeight) ||
+		(parseInt(p.rep.style.top) + p.rep.clientHeight > parseInt(this.rep.style.top) && parseInt(p.rep.style.top) + p.rep.clientHeight < parseInt(this.rep.style.top) + this.rep.clientHeight )))) {
+			p.alive = false;
+			return;
+		}
+
+		// if the player is running into the right side of the veg
+		// same as the previous massive if statement but flipped x values
+		// if the right side of the player is between the veggie's right and left side
+		if (( parseInt(p.rep.style.left) + p.rep.clientWidth > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) + p.rep.clientWidth < parseInt(this.rep.style.left) + this.rep.clientWidth ) &&
+		(( (parseInt(p.rep.style.top) < parseInt(this.rep.style.top) && parseInt(p.rep.style.top) > parseInt(this.rep.style.top) + this.rep.clientHeight) ||
+		(parseInt(p.rep.style.top) + p.rep.clientHeight > parseInt(this.rep.style.top) && parseInt(p.rep.style.top) + p.rep.clientHeight < parseInt(this.rep.style.top) + this.rep.clientHeight )))) {
+			p.alive = false;
+			return;
+		}
 	}
 
 	summon(direction) {
@@ -324,10 +343,21 @@ function runGame() {
 		}
 		vm.update();
 		vm.checkCollision();
+
+		if (! player.alive) {
+			reset();
+			return;
+		}
     }
 }
 
 function reset() {
+	for (let i = 0; i < vm.veggies.length; i++) {
+		if (vm.veggies[i] != null) {
+			vm.remove(i);
+		}
+	}
+	player.alive = true;
 	onion.summon('Left');
 	cabbage.summon('Left');
 	carrot.summon('Left');
