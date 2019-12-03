@@ -17,3 +17,9 @@
 .vegetable {
     position: absolute;
 }
+
+.score {
+    position: absolute;
+    color: white;
+    font-size: 400%;
+}

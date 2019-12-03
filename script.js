@@ -179,6 +179,11 @@ class Vegetable {
 				//console.log('HIT');
 				// kill the vegetable and increase player's acceleration
 				p.velocityY = -1 * p.maxVelY;
+				p.chain ++;
+				if (p.chain > 20) {
+					p.chain = 20;
+				}
+				p.score += 100 * p.chain;
 				vm.kill(this.id);
 			}
 			return;
@@ -229,6 +234,9 @@ class Player {
 		this.rep.style.left = Math.round($(window).width()/2) + 'px';
 		
 		this.alive = true;
+
+		this.score = 0;
+		this.chain = 0;
 	}
 
 	update() {
@@ -251,6 +259,10 @@ class Player {
 			this.rep.style.left = $(window).width() - this.rep.clientWidth + 'px';
 			this.velocityX = 0;
 			this.accelX = 0;
+		}
+
+		if (parseInt(this.rep.style.top) == base_y) {
+			this.chain = 0;
 		}
 
 		this.rep.style.left = parseInt(this.rep.style.left) + this.velocityX + 'px';
@@ -316,8 +328,13 @@ function startGame(fps) {
 	document.body.removeChild(onion.rep);
 	document.body.removeChild(cabbage.rep);
 	document.body.removeChild(carrot.rep);
-
 	document.getElementById('start').style.display = 'none';
+
+	let score = document.createElement('div');
+	score.classList.add('score');
+	score.innerHTML = 'Score: 0';
+	document.body.appendChild(score);
+
 	document.getElementById('sky').style.display = 'block';
 	document.getElementById('ground').style.display = 'block';
 	document.getElementById('player').style.display = 'block';
@@ -344,6 +361,9 @@ function runGame() {
 		vm.update();
 		vm.checkCollision();
 
+		let score = document.getElementsByClassName('score')[0];
+		score.innerHTML = 'Score: ' + player.score;
+
 		if (! player.alive) {
 			reset();
 			return;
@@ -365,6 +385,7 @@ function reset() {
 	document.getElementById('sky').style.display = 'none';
 	document.getElementById('ground').style.display = 'none';
 	document.getElementById('player').style.display = 'none';
+	document.body.removeChild(document.getElementById('score'));
 }
 
 let onion = new Vegetable('onion');
