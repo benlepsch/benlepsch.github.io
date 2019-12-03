@@ -295,15 +295,15 @@ window.onkeyup = function(e) {
 }
 
 function checkKeys() {
-	if (keys[87]) {
+	if (keys[87] || keys[38] || keys[32]) {
 		if (parseInt(player.rep.style.top) == base_y) {
 			player.velocityY = -1 * player.maxVelY;
 		}
 	}
-	if (keys[65]) {
+	if (keys[65] || keys[37]) {
 		player.accelX = -20;
 	}
-	if (keys[68]) {
+	if (keys[68] || keys[39]) {
 		player.accelX = 20;
 	}
 }
