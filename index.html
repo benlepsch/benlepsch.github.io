@@ -1,13 +1,18 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="icon" href="/images/bean_icon.png">
-        <link rel="stylesheet" type="text/css" href="/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <title>Ben Lepsch Website</title>
-    </head>
-    <body>
-        <div id='test' class='box'>1</div>
-        <script src="script.js"></script>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>bean jump</title>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+    <link rel="icon" type="image" href="images/bean_icon.png">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body style="overflow:hidden">
+    <button id="start" onclick="startGame(60)">Start Game</button>
+    <div id='sky' class='sky' style="display: none"></div>
+    <div id='ground' class='ground' style="display: none"></div>
+    <img id='player' class='player' style="display: none" src='images/bean.png'>
+    <script src="script.js"></script>
+  </body>
 </html>
