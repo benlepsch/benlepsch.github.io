@@ -96,6 +96,7 @@ class VegetableManager {
 
 	// remove for veggies that get killed
 	// separate function right now because i want to make it fall off like the real game later
+	// eventually make this just set alive to false, turn upside down
 	kill(id) {
 		this.remove(id);
 	}
@@ -170,10 +171,11 @@ class Vegetable {
 
 			// make sure it's at least partially over it
 			// right corner over it, both over it, left over it
+			// make sure the veggie is alive and the player is falling down
 			if (((parseInt(p.rep.style.left) + p.rep.clientWidth > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) < parseInt(this.rep.style.left)) ||
 			 (parseInt(p.rep.style.left) > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) + p.rep.clientWidth < parseInt(this.rep.style.left) + this.rep.clientWidth) ||
 			 (parseInt(p.rep.style.left) > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) < parseInt(this.rep.style.left) + this.rep.clientWidth)) &&
-			 p.velocityY > 0) {
+			 (p.velocityY > 0 && this.alive)) {
 				//console.log('HIT');
 				// kill the vegetable and increase player's acceleration
 				p.velocityY = -1 * p.maxVelY;
