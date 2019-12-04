@@ -162,24 +162,34 @@ class Vegetable {
 	colliding(p) {
 		// i'm going to collision detect after the player gets a little bit inside of the veg because that's how the real game looks
 		// ok then
-
+	
 		// dont want to collide with a dead veggie
 		if (! this.alive) {
 			return;
 		}
-
+		
+		let playerLeft = parseInt(p.rep.style.left);
+		let playerTop = parseInt(p.rep.style.top);
+		let playerRight = playerLeft + p.rep.clientWidth;
+		let playerBottom = playerTop + p.rep.clientHeight;
+	
+		let vegLeft = parseInt(this.rep.style.left);
+		let vegTop = parseInt(this.rep.style.top);
+		let vegRight = vegLeft + this.rep.clientWidth;
+		let vegBottom = vegTop + this.rep.clientHeight;
+	
 		// if the player is above the veg and a little inside, but not too much, AND its top is wholly above it
 		// if the player's bottom is a little below the veggie's top
 		//console.log('ptop: ' + p.rep.style.top + '\tpheight: ' + p.rep.clientHeight + '\tvegtop: ' + this.rep.style.top);
-		if (parseInt(p.rep.style.top) + p.rep.clientHeight + 5 > parseInt(this.rep.style.top) && parseInt(p.rep.style.top) < parseInt(this.rep.style.top)) {
+		if (playerBottom + 5 > vegTop && playerTop < vegTop) {
 			//console.log('bruh');
-
+	
 			// make sure it's at least partially over it
 			// right corner over it, both over it, left over it
 			// make sure the veggie is alive and the player is falling down
-			if (((parseInt(p.rep.style.left) + p.rep.clientWidth > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) < parseInt(this.rep.style.left)) ||
-			(parseInt(p.rep.style.left) > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) + p.rep.clientWidth < parseInt(this.rep.style.left) + this.rep.clientWidth) ||
-			(parseInt(p.rep.style.left) > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) < parseInt(this.rep.style.left) + this.rep.clientWidth)) &&
+			if (((playerRight > vegLeft && playerLeft < vegLeft) ||
+			(playerLeft > vegLeft && playerRight < vegRight) ||
+			(playerLeft > vegLeft && playerLeft < vegRight)) &&
 			(p.velocityY > 0 && this.alive)) {
 				//console.log('HIT');
 				// kill the vegetable and increase player's acceleration
@@ -193,33 +203,33 @@ class Vegetable {
 			}
 			return;
 		}
-
+	
 		// if the player is running into the left side of the veg
 		// aka if (the left side is inside the left) and (the right isnt) and (the bottom is below top and above bottom) or (the top is below top and above bottom)
-		if (( parseInt(p.rep.style.left) > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) < parseInt(this.rep.style.left) + this.rep.clientWidth ) &&
-		(( (parseInt(p.rep.style.top) < parseInt(this.rep.style.top) && parseInt(p.rep.style.top) > parseInt(this.rep.style.top) + this.rep.clientHeight) ||
-		(parseInt(p.rep.style.top) + p.rep.clientHeight > parseInt(this.rep.style.top) && parseInt(p.rep.style.top) + p.rep.clientHeight < parseInt(this.rep.style.top) + this.rep.clientHeight )))) {
+		if (( playerLeft > vegLeft && playerLeft < vegRight ) &&
+		(( (playerTop < vegTop && playerTop > vegBottom) ||
+		(playerBottom > vegTop && playerBottom < vegBottom )))) {
 			p.alive = false;
 			return;
 		}
-
+	
 		// if the player is running into the right side of the veg
 		// same as the previous massive if statement but flipped x values
 		// if the right side of the player is between the veggie's right and left side
-		if (( parseInt(p.rep.style.left) + p.rep.clientWidth > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) + p.rep.clientWidth < parseInt(this.rep.style.left) + this.rep.clientWidth ) &&
-		(( (parseInt(p.rep.style.top) < parseInt(this.rep.style.top) && parseInt(p.rep.style.top) > parseInt(this.rep.style.top) + this.rep.clientHeight) ||
-		(parseInt(p.rep.style.top) + p.rep.clientHeight > parseInt(this.rep.style.top) && parseInt(p.rep.style.top) + p.rep.clientHeight < parseInt(this.rep.style.top) + this.rep.clientHeight )))) {
+		if (( playerRight > vegLeft && playerRight < vegRight ) &&
+		(( (playerTop < vegTop && playerTop > vegBottom) ||
+		(playerBottom > vegTop && playerBottom < vegBottom )))) {
 			p.alive = false;
 			return;
 		}
-
+	
 		// lastly we need somethign to check if the top of the player is inside a veg
 		// jumping into carrots actually kills you because it activates one of the things above but without this you can go under the cabbages
 		// if the players top (plus a little bit) is above the veggie's bottom and player bottom is below veggie bottom
-		if (parseInt(p.rep.style.top) + 5 < parseInt(this.rep.style.top) + this.rep.clientHeight && parseInt(p.rep.style.top) + p.rep.clientHeight > parseInt(this.rep.style.top) + this.rep.clientHeight) {
+		if (playerTop + 5 < vegBottom && playerBottom > vegBottom) {
 			// and if its left is between the veggie's right and left or if its right is between veggie right and left
-			if ((parseInt(p.rep.style.left) > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) < parseInt(this.rep.style.left) + this.rep.clientWidth) ||
-			(parseInt(p.rep.style.left) + p.rep.clientWidth > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) + p.rep.clientWidth < parseInt(this.rep.style.left) + this.rep.clientWidth)) {
+			if ((playerLeft > vegLeft && playerLeft < vegRight) ||
+			(playerRight > vegLeft && playerRight < vegRight)) {
 				p.alive = false;
 				return;
 			}
