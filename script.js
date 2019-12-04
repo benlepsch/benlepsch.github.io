@@ -95,7 +95,9 @@ class VegetableManager {
 	// separate function right now because i want to make it fall off like the real game later
 	// eventually make this just set alive to false, turn upside down
 	kill(id) {
-		this.remove(id);
+		// does nothing rn
+		this.veggies[parseInt(id)].alive = false;
+		this.veggies[parseInt(id)].rep.classList.add('flipped');
 	}
 
 	checkCollision() {
@@ -112,6 +114,9 @@ class Vegetable {
 		this.id = id;
 		this.alive = true;
 		this.speed = Math.floor(Math.random() * 8) + 4;
+		this.velY = 0;
+		this.maxVelY = 28;
+		this.accelY = 1.5;
 	}
 
 	// create the image and blit onto screen
@@ -146,10 +151,19 @@ class Vegetable {
 	update() {
 		if (this.alive) {
 			this.rep.style.left = parseInt(this.rep.style.left) + this.speed + 'px';
+		} else {
+			this.rep.style.top = parseInt(this.rep.style.top) + this.velY + 'px';
+			this.velY = constrain(this.velY + this.accelY, 0, this.maxVelY);
 		}
 
-		// if its off the screen
+		// if its off the screen to the right or left
 		if (parseInt(this.rep.style.left) > $(window).width() || parseInt(this.rep.style.left) + this.rep.clientWidth < 0) {
+			vm.remove(this.id);
+		}
+
+		// if it's below the screen
+		// this only activates when it dies
+		if (parseInt(this.rep.style.top) > $(window).height()) {
 			vm.remove(this.id);
 		}
 	}

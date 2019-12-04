@@ -24,3 +24,7 @@
     font-size: 400%;
     text-shadow: 2px 2px 0px black;
 }
+
+.flipped {
+    transform: rotate(180deg);
+}
