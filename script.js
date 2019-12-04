@@ -140,7 +140,7 @@ class Vegetable {
 		} else if (this.type == 'cabbage') {
 			this.rep.style.top = base_y + player.rep.clientHeight - 130 + 'px';
 		} else if (this.type == 'carrot') {
-			this.rep.style.top = base_y + player.rep.clientHeight - 280 + 'px';
+			this.rep.style.top = base_y + player.rep.clientHeight - 290 + 'px';
 		}
 
 		if (this.direction == 'Right') {
@@ -440,6 +440,8 @@ function reset() {
 			vm.remove(i);
 		}
 	}
+
+	// summon menu screen veggies
 	onion.summon('Left');
 	cabbage.summon('Left');
 	carrot.summon('Left');
@@ -449,12 +451,16 @@ function reset() {
 	onion.rep.style.top = $(window).height()/3 + 'px';
 	cabbage.rep.style.top = $(window).height()/3 + 'px';
 	carrot.rep.style.top = $(window).height()/3 + 'px';
+
+	// bring back start button and score displays
 	document.getElementById('start').style.display = 'block';
 	recent.style.display = 'block';
 	best.style.display = 'block';
 	recent.innerHTML = 'Recent score: ' + recent_score;
 	best.innerHTML = 'Best score: ' + best_score;
 	papi_info.style.display = 'block';
+
+	// remove game stuff
 	document.getElementById('sky').style.display = 'none';
 	document.getElementById('ground').style.display = 'none';
 	document.getElementById('player').style.display = 'none';
