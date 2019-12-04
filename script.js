@@ -317,6 +317,8 @@ let best_score = 0;
 let recent = document.getElementById('recent');
 let best = document.getElementById('best');
 
+let papi_info = document.getElementById('papiinfo');
+
 let player = new Player('player');
 
 
@@ -380,6 +382,7 @@ function startGame(fps) {
 	document.body.removeChild(cabbage.rep);
 	document.body.removeChild(carrot.rep);
 	document.getElementById('start').style.display = 'none';
+	papi_info.style.display = 'none';
 	recent.style.display = 'none';
 	best.style.display = 'none';
 
@@ -440,11 +443,15 @@ function reset() {
 	onion.summon('Left');
 	cabbage.summon('Left');
 	carrot.summon('Left');
+	onion.rep.style.left = $(window).width()/2 + 'px';
+	cabbage.rep.style.left = $(window).width()/2 + 'px';
+	carrot.rep.style.left = $(window).width()/2 + 'px';
 	document.getElementById('start').style.display = 'block';
 	recent.style.display = 'block';
 	best.style.display = 'block';
 	recent.innerHTML = 'Recent score: ' + recent_score;
 	best.innerHTML = 'Best score: ' + best_score;
+	papi_info.style.display = 'block';
 	document.getElementById('sky').style.display = 'none';
 	document.getElementById('ground').style.display = 'none';
 	document.getElementById('player').style.display = 'none';
