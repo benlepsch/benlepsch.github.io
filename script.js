@@ -311,6 +311,11 @@ class Player {
 
 // determine where to draw the ground
 let base_y = Math.floor($(window).height()*2 /3);
+let recent_score = 0;
+let best_score = 0;
+
+let recent = document.getElementById('recent');
+let best = document.getElementById('best');
 
 let player = new Player('player');
 
@@ -375,6 +380,8 @@ function startGame(fps) {
 	document.body.removeChild(cabbage.rep);
 	document.body.removeChild(carrot.rep);
 	document.getElementById('start').style.display = 'none';
+	recent.style.display = 'none';
+	best.style.display = 'none';
 
 	let score = document.createElement('div');
 	score.classList.add('score');
@@ -417,6 +424,10 @@ function runGame() {
 
 		let score = document.getElementsByClassName('score')[0];
 		score.innerHTML = 'Score: ' + player.score;
+		recent_score = player.score;
+		if (player.score > best_score) {
+			best_score = player.score;
+		}
     }
 }
 
@@ -430,6 +441,10 @@ function reset() {
 	cabbage.summon('Left');
 	carrot.summon('Left');
 	document.getElementById('start').style.display = 'block';
+	recent.style.display = 'block';
+	best.style.display = 'block';
+	recent.innerHTML = 'Recent score: ' + recent_score;
+	best.innerHTML = 'Best score: ' + best_score;
 	document.getElementById('sky').style.display = 'none';
 	document.getElementById('ground').style.display = 'none';
 	document.getElementById('player').style.display = 'none';
@@ -445,5 +460,8 @@ let carrot = new Vegetable('carrot');
 onion.summon('Left');
 cabbage.summon('Left');
 carrot.summon('Left');
+onion.rep.style.left = $(window).width()/2 + 'px';
+cabbage.rep.style.left = $(window).width()/2 + 'px';
+carrot.rep.style.left = $(window).width()/2 + 'px';
 
 //startGame(60);
