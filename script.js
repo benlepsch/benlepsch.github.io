@@ -15,7 +15,7 @@ class VegetableManager {
 		this.begin = new Date().getTime();
 		this.last = this.begin;
 		this.cooldown = 0;
-		this.lowerTick = 200;
+		this.lowerTick = 150;
 		this.types = ['onion','cabbage','carrot'];
 	}
 
@@ -291,7 +291,7 @@ class Player {
 let base_y = Math.floor($(window).height()*2 /3);
 
 let player = new Player('player');
-let vm = new VegetableManager();
+
 
 // set up background
 let sky = document.getElementById('sky');
@@ -340,8 +340,15 @@ function checkKeys() {
 //runs the game at a specified fps
 //dont touch i dont know how it works
 
+let vm;
+
 let fpsInterval, then, startTime, elapsed;
 function startGame(fps) {
+	vm = new VegetableManager();
+	if (player == null) {
+		player = new Player('player');
+	}
+
 	document.body.removeChild(onion.rep);
 	document.body.removeChild(cabbage.rep);
 	document.body.removeChild(carrot.rep);
@@ -357,6 +364,8 @@ function startGame(fps) {
 	document.getElementById('player').style.display = 'block';
 	ground.style.top = base_y + player.rep.clientHeight + 'px';
 
+	player.alive = true;
+
     fpsInterval = 1000 / fps;
     then = Date.now();
     startTime = then;
@@ -364,8 +373,14 @@ function startGame(fps) {
 }
 
 function runGame() {
-    requestAnimationFrame(runGame);
-    now = Date.now();
+	if (! player.alive) {
+		reset();
+		return;
+	}
+	if (player.alive) {
+    	requestAnimationFrame(runGame);
+	}
+	now = Date.now();
     elapsed = now - then;
 
     if (elapsed > fpsInterval) {
@@ -380,11 +395,6 @@ function runGame() {
 
 		let score = document.getElementsByClassName('score')[0];
 		score.innerHTML = 'Score: ' + player.score;
-
-		if (! player.alive) {
-			reset();
-			return;
-		}
     }
 }
 
@@ -394,7 +404,6 @@ function reset() {
 			vm.remove(i);
 		}
 	}
-	player.alive = true;
 	onion.summon('Left');
 	cabbage.summon('Left');
 	carrot.summon('Left');
@@ -402,7 +411,10 @@ function reset() {
 	document.getElementById('sky').style.display = 'none';
 	document.getElementById('ground').style.display = 'none';
 	document.getElementById('player').style.display = 'none';
-	document.body.removeChild(document.getElementById('score'));
+	document.body.removeChild(document.getElementsByClassName('score')[0]);
+	
+	player = null;
+	vm = null;
 }
 
 let onion = new Vegetable('onion');
