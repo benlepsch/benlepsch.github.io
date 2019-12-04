@@ -134,11 +134,11 @@ class Vegetable {
 
 		// get the y right, this never needs to be changed
 		if (this.type == 'onion') {
-			this.rep.style.top = base_y + player.rep.clientHeight - 100 + 'px'; //- this.rep.clientHeight + player.rep.clientHeight + 'px';
+			this.rep.style.top = base_y + player.rep.clientHeight - 100 + 'px';
 		} else if (this.type == 'cabbage') {
-			this.rep.style.top = base_y + player.rep.clientHeight - 140 + 'px'; //- this.rep.clientHeight - 30 + player.rep.clientHeight + 'px';
+			this.rep.style.top = base_y + player.rep.clientHeight - 130 + 'px';
 		} else if (this.type == 'carrot') {
-			this.rep.style.top = base_y + player.rep.clientHeight - 280 + 'px'; //- this.rep.clientHeight - 150 + player.rep.clientHeight + 'px';
+			this.rep.style.top = base_y + player.rep.clientHeight - 280 + 'px';
 		}
 
 		if (this.direction == 'Right') {
@@ -162,6 +162,11 @@ class Vegetable {
 	colliding(p) {
 		// i'm going to collision detect after the player gets a little bit inside of the veg because that's how the real game looks
 		// ok then
+
+		// dont want to collide with a dead veggie
+		if (! this.alive) {
+			return;
+		}
 
 		// if the player is above the veg and a little inside, but not too much, AND its top is wholly above it
 		// if the player's bottom is a little below the veggie's top
@@ -206,6 +211,18 @@ class Vegetable {
 		(parseInt(p.rep.style.top) + p.rep.clientHeight > parseInt(this.rep.style.top) && parseInt(p.rep.style.top) + p.rep.clientHeight < parseInt(this.rep.style.top) + this.rep.clientHeight )))) {
 			p.alive = false;
 			return;
+		}
+
+		// lastly we need somethign to check if the top of the player is inside a veg
+		// jumping into carrots actually kills you because it activates one of the things above but without this you can go under the cabbages
+		// if the players top (plus a little bit) is above the veggie's bottom and player bottom is below veggie bottom
+		if (parseInt(p.rep.style.top) + 5 < parseInt(this.rep.style.top) + this.rep.clientHeight && parseInt(p.rep.style.top) + p.rep.clientHeight > parseInt(this.rep.style.top) + this.rep.clientHeight) {
+			// and if its left is between the veggie's right and left or if its right is between veggie right and left
+			if ((parseInt(p.rep.style.left) > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) < parseInt(this.rep.style.left) + this.rep.clientWidth) ||
+			(parseInt(p.rep.style.left) + p.rep.clientWidth > parseInt(this.rep.style.left) && parseInt(p.rep.style.left) + p.rep.clientWidth < parseInt(this.rep.style.left) + this.rep.clientWidth)) {
+				p.alive = false;
+				return;
+			}
 		}
 	}
 
