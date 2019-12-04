@@ -15,7 +15,7 @@ class VegetableManager {
 		this.begin = new Date().getTime();
 		this.last = this.begin;
 		this.cooldown = 0;
-		this.lowerTick = 150;
+		this.upperTick = 150;
 		this.types = ['onion','cabbage','carrot'];
 	}
 
@@ -47,20 +47,17 @@ class VegetableManager {
 		// then set a new cooldown
 		// oh god
 		// so at max i want maybe a couple every 60 frames/1 second, so cooldown between 30-60?
-		// at the start idk dude maybe cooldown of 200-400 or something
-		// but how do i scale that
-		// after 60 seconds i want max speed
-		// so 60 seconds for delta 120 ticks
-		// for every second decrease lower tick by 2
+		// at the start up to 150
+		// but leave the min at 30 so you occasionally get 2 veggies at once early game
 		
-		if (this.lowerTick - 2*dt < 30) {
-			this.lowerTick = 30;
+		if (this.upperTick - 2*dt < 60) {
+			this.upperTick = 60;
 		} else {
-			this.lowerTick -= 2*dt;
+			this.upperTick -= 5*dt;
 		}
 
-		// set cooldown from lowerTick to double lowerTick, so 30 to 60 or 200 to 400 etc
-		this.cooldown = Math.round(Math.random() * this.lowerTick) + this.lowerTick;
+		// set cooldown from 30 to upperTick
+		this.cooldown = Math.round(Math.random() * this.upperTick) + 30;
 
 		this.onVeg ++;
 	}
