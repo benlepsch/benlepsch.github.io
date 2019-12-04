@@ -171,7 +171,7 @@ class Vegetable {
 		// if the player is above the veg and a little inside, but not too much, AND its top is wholly above it
 		// if the player's bottom is a little below the veggie's top
 		//console.log('ptop: ' + p.rep.style.top + '\tpheight: ' + p.rep.clientHeight + '\tvegtop: ' + this.rep.style.top);
-		if (parseInt(p.rep.style.top) + p.rep.clientHeight > parseInt(this.rep.style.top) && parseInt(p.rep.style.top) + p.rep.clientHeight/2 < parseInt(this.rep.style.top)) {
+		if (parseInt(p.rep.style.top) + p.rep.clientHeight + 5 > parseInt(this.rep.style.top) && parseInt(p.rep.style.top) < parseInt(this.rep.style.top)) {
 			//console.log('bruh');
 
 			// make sure it's at least partially over it
