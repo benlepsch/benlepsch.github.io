@@ -446,6 +446,9 @@ function reset() {
 	onion.rep.style.left = $(window).width()/2 + 'px';
 	cabbage.rep.style.left = $(window).width()/2 + 'px';
 	carrot.rep.style.left = $(window).width()/2 + 'px';
+	onion.rep.style.top = $(window).height()/3 + 'px';
+	cabbage.rep.style.top = $(window).height()/3 + 'px';
+	carrot.rep.style.top = $(window).height()/3 + 'px';
 	document.getElementById('start').style.display = 'block';
 	recent.style.display = 'block';
 	best.style.display = 'block';
@@ -470,5 +473,8 @@ carrot.summon('Left');
 onion.rep.style.left = $(window).width()/2 + 'px';
 cabbage.rep.style.left = $(window).width()/2 + 'px';
 carrot.rep.style.left = $(window).width()/2 + 'px';
+onion.rep.style.top = $(window).height()/3 + 'px';
+cabbage.rep.style.top = $(window).height()/3 + 'px';
+carrot.rep.style.top = $(window).height()/3 + 'px';
 
 //startGame(60);
