@@ -196,9 +196,10 @@ class Vegetable {
 				p.velocityY = -1 * p.maxVelY;
 				p.chain ++;
 				if (p.chain > 20) {
-					p.chain = 20;
+					p.score += 100 * 20;
+				} else {
+					p.score += 100 * p.chain;
 				}
-				p.score += 100 * p.chain;
 				vm.kill(this.id);
 			}
 			return;
