@@ -243,7 +243,7 @@ class Vegetable {
 					} else {
 						ftext = '' + this.score;
 					}
-					p.score += 100 * p.chain;
+					p.score += this.score * p.chain;
 				}
 
 				vm.kill(this.id);
