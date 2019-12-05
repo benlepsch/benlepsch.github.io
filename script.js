@@ -10,19 +10,24 @@ function constrain(val, min, max) { // used in moving player around
 
 class FloatyText {
 	constructor(txt, player) {
-		this.id = txt;
+		this.id = ft;
 		this.me = document.createElement('div');
 		this.me.classList.add('floaty');
 		this.me.setAttribute('id', this.id);
+		this.me.innerHTML = txt;
 		document.body.appendChild(this.me);
 		this.me.style.left = parseInt(player.rep.style.left) + player.rep.clientWidth/2 - this.me.clientWidth/2 + 'px';
 		this.me.style.top = parseInt(player.rep.style.top) + player.rep.clientHeight/2 - this.me.clientHeight/2 + 'px';
+		console.log(this.me.clientWidth);
 		this.moving = true;
+		this.me.style.opacity = 1;
 	}
 
 	update() {
-		this.me.style.opacity -= 0.01;
+		this.me.style.opacity = this.me.style.opacity - 0.01;
+		console.log(this.me.style.opacity);
 		this.me.style.top = parseInt(this.me.style.top) - 0.5 + 'px';
+		console.log(this.me.style.top);
 		if (this.me.style.opacity <= 0) {
 			document.body.removeChild(this.me);
 			this.moving = false;
@@ -228,19 +233,17 @@ class Vegetable {
 				p.chain ++;
 				if (p.chain > 20) {
 					p.score += 100 * 20;
-					ftext = p.chain + ' chain\n100x20';
+					ftext = p.chain + ' chain<br>100x20';
 				} else {
 					if (p.chain > 1) {
-						ftext = p.chain + ' chain\n100x' + p.chain;
+						ftext = p.chain + ' chain<br>100x' + p.chain;
 					} else {
 						ftext = '100';
 					}
 					p.score += 100 * p.chain;
 				}
 
-				console.log('boutta kill');
 				vm.kill(this.id);
-				console.log('oops');
 
 				floatyTexts[ft] = new FloatyText(ftext, player);
 				ft ++;
@@ -469,7 +472,9 @@ function runGame() {
 
 		for (let i = 0; i < floatyTexts.length; i++) {
 			console.log('updating?');
+			//console.log(floatyTexts[i]);
 			if (floatyTexts[i] != null) {
+				console.log(floatyTexts[i].moving);
 				if (floatyTexts[i].moving) {
 					console.log('updating!');
 					console.log(floatyTexts[i]);
