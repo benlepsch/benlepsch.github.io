@@ -29,6 +29,10 @@
     transform: rotate(180deg);
 }
 
+.mirror {
+    transform: scaleX(-1);
+}
+
 .floaty {
     position: absolute;
     color: yellow;

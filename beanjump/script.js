@@ -152,13 +152,14 @@ class Vegetable {
 	init() {
 		this.rep = document.createElement('img');
 		this.rep.classList.add('vegetable');
-		this.rep.src = 'images/' + this.type + this.direction + '.png';
+		this.rep.src = 'images/' + this.type + '.png';
 		document.body.appendChild(this.rep);
 
 		// starts from left side
 		if (this.direction == 'Left') {
 			this.rep.style.left = -1 * this.rep.clientWidth + 'px';
 		} else {
+			this.rep.classList.add('mirror');
 			this.rep.style.left = 1 + $(window).width() + 'px';
 		}
 
@@ -293,7 +294,10 @@ class Vegetable {
 	summon(direction) {
 		this.rep = document.createElement('img');
 		this.rep.classList.add('vegetable');
-		this.rep.src = 'images/' + this.id + direction + '.png';
+		this.rep.src = 'images/' + this.id + '.png';
+		if (direction == 'Right') {
+			this.rep.classList.add('mirror');
+		}
 		document.body.appendChild(this.rep);
 	}
 }
