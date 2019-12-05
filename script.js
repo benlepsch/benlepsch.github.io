@@ -18,16 +18,16 @@ class FloatyText {
 		document.body.appendChild(this.me);
 		this.me.style.left = parseInt(player.rep.style.left) + player.rep.clientWidth/2 - this.me.clientWidth/2 + 'px';
 		this.me.style.top = parseInt(player.rep.style.top) + player.rep.clientHeight/2 - this.me.clientHeight/2 + 'px';
-		console.log(this.me.clientWidth);
+		//console.log(this.me.clientWidth);
 		this.moving = true;
 		this.me.style.opacity = 1;
 	}
 
 	update() {
 		this.me.style.opacity = this.me.style.opacity - 0.01;
-		console.log(this.me.style.opacity);
+		//console.log(this.me.style.opacity);
 		this.me.style.top = parseInt(this.me.style.top) - 0.5 + 'px';
-		console.log(this.me.style.top);
+		//console.log(this.me.style.top);
 		if (this.me.style.opacity <= 0) {
 			document.body.removeChild(this.me);
 			this.moving = false;
@@ -124,6 +124,8 @@ class VegetableManager {
 	kill(id) {
 		this.veggies[parseInt(id)].alive = false;
 		this.veggies[parseInt(id)].rep.classList.add('flipped');
+		this.veggies[parseInt(id)].rep.style.width = this.veggies[parseInt(id)].rep.clientWidth + 'px';
+		this.veggies[parseInt(id)].rep.style.height = this.veggies[parseInt(id)].rep.clientHeight * .8 + 'px';
 	}
 
 	checkCollision() {
@@ -220,9 +222,9 @@ class Vegetable {
 	
 		// if the player is above the veg and a little inside, but not too much, AND its top is wholly above it
 		// if the player's bottom is a little below the veggie's top
-		//console.log('ptop: ' + p.rep.style.top + '\tpheight: ' + p.rep.clientHeight + '\tvegtop: ' + this.rep.style.top);
+		////console.log('ptop: ' + p.rep.style.top + '\tpheight: ' + p.rep.clientHeight + '\tvegtop: ' + this.rep.style.top);
 		if (playerBottom + 5 > vegTop && playerTop < vegTop) {
-			//console.log('bruh');
+			////console.log('bruh');
 	
 			// make sure it's at least partially over it
 			// right corner over it, both over it, left over it
@@ -231,7 +233,7 @@ class Vegetable {
 			(playerLeft > vegLeft && playerRight < vegRight) ||
 			(playerLeft > vegLeft && playerLeft < vegRight)) &&
 			(p.velocityY > 0 && this.alive)) {
-				//console.log('HIT');
+				////console.log('HIT');
 				// kill the vegetable and increase player's acceleration
 				let ftext = '';
 				p.velocityY = -1 * p.maxVelY;
@@ -321,7 +323,7 @@ class Player {
 	update() {
 		this.velocityX = constrain(this.velocityX + this.accelX, -1*this.maxVelX, this.maxVelX);
 		this.velocityY = constrain(this.velocityY + this.accelY, -1*this.maxVelY, this.maxVelY);
-		//console.log("accel: " + this.accelX + "\tvel: " + this.velocityX);
+		////console.log("accel: " + this.accelX + "\tvel: " + this.velocityX);
 
 		this.velocityX = this.velocityX < 0 ? Math.ceil(this.velocityX/2) : Math.floor(this.velocityX/2);
 		this.accelX = 0;
@@ -375,7 +377,7 @@ sky.style.height = $(window).height() + 'px';
 sky.style.top = '0px';
 sky.style.left = '0px';
 
-//console.log($(window).width());
+////console.log($(window).width());
 
 ground.style.width = $(window).width() + 'px';
 ground.style.height = $(window).height() - (base_y + player.rep.clientHeight) + 'px';
@@ -476,13 +478,13 @@ function runGame() {
 		vm.checkCollision();
 
 		for (let i = 0; i < floatyTexts.length; i++) {
-			console.log('updating?');
-			//console.log(floatyTexts[i]);
+			//console.log('updating?');
+			////console.log(floatyTexts[i]);
 			if (floatyTexts[i] != null) {
-				console.log(floatyTexts[i].moving);
+				//console.log(floatyTexts[i].moving);
 				if (floatyTexts[i].moving) {
-					console.log('updating!');
-					console.log(floatyTexts[i]);
+					//console.log('updating!');
+					//console.log(floatyTexts[i]);
 					floatyTexts[i].update();
 				} else {
 					floatyTexts[i] = null;
