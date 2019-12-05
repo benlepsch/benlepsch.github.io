@@ -525,6 +525,13 @@ function reset() {
 	document.getElementById('sky').style.display = 'none';
 	document.getElementById('ground').style.display = 'none';
 	document.getElementById('player').style.display = 'none';
+
+	for (let i = 0; i < floatyTexts.length; i++) {
+		if (floatyTexts[i] != null) {
+			document.body.removeChild(floatyTexts[i].me);
+		}
+	}
+
 	floatyTexts = [];
 	ft = 0;
 	document.body.removeChild(document.getElementsByClassName('score')[0]);
@@ -545,5 +552,3 @@ carrot.rep.style.left = $(window).width()/2 + 'px';
 onion.rep.style.top = $(window).height()/3 + 'px';
 cabbage.rep.style.top = $(window).height()/3 + 'px';
 carrot.rep.style.top = $(window).height()/3 + 'px';
-
-//startGame(60);
