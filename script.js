@@ -43,6 +43,7 @@ class VegetableManager {
 		this.last = this.begin;
 		this.cooldown = 0;
 		this.upperTick = 150;
+		this.lowerTick = 30;
 		this.types = ['onion','cabbage','carrot'];
 	}
 
@@ -77,14 +78,15 @@ class VegetableManager {
 		// at the start up to 150
 		// but leave the min at 30 so you occasionally get 2 veggies at once early game
 		
-		if (this.upperTick - 2*dt < 60) {
-			this.upperTick = 60;
+		if (this.upperTick - 2*dt < 30) {
+			this.upperTick = 45;
+			this.lowerTick = 15;
 		} else {
 			this.upperTick -= 5*dt;
 		}
 
 		// set cooldown from 30 to upperTick
-		this.cooldown = Math.round(Math.random() * this.upperTick) + 30;
+		this.cooldown = Math.round(Math.random() * this.upperTick) + this.lowerTick;
 
 		this.onVeg ++;
 	}
