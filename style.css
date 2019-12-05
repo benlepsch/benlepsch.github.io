@@ -28,3 +28,10 @@
 .flipped {
     transform: rotate(180deg);
 }
+
+.floaty {
+    position: absolute;
+    color: yellow;
+    font-size: 300%;
+    opacity: 1;
+}

@@ -8,6 +8,28 @@ function constrain(val, min, max) { // used in moving player around
 	return val;
 }
 
+class FloatyText {
+	constructor(txt, player) {
+		this.id = txt;
+		this.me = document.createElement('div');
+		this.me.classList.add('floaty');
+		this.me.setAttribute('id', this.id);
+		document.body.appendChild(this.me);
+		this.me.style.left = parseInt(player.rep.style.left) + player.rep.clientWidth/2 - this.me.clientWidth/2 + 'px';
+		this.me.style.top = parseInt(player.rep.style.top) + player.rep.clientHeight/2 - this.me.clientHeight/2 + 'px';
+		this.moving = true;
+	}
+
+	update() {
+		this.me.style.opacity -= 0.01;
+		this.me.style.top = parseInt(this.me.style.top) - 0.5 + 'px';
+		if (this.me.style.opacity <= 0) {
+			document.body.removeChild(this.me);
+			this.moving = false;
+		}
+	}
+}
+
 class VegetableManager {
 	constructor() {
 		this.veggies = []; // holds Vegetable objects
@@ -92,10 +114,7 @@ class VegetableManager {
 	}
 
 	// remove for veggies that get killed
-	// separate function right now because i want to make it fall off like the real game later
-	// eventually make this just set alive to false, turn upside down
 	kill(id) {
-		// does nothing rn
 		this.veggies[parseInt(id)].alive = false;
 		this.veggies[parseInt(id)].rep.classList.add('flipped');
 	}
@@ -204,14 +223,27 @@ class Vegetable {
 			(p.velocityY > 0 && this.alive)) {
 				//console.log('HIT');
 				// kill the vegetable and increase player's acceleration
+				let ftext = '';
 				p.velocityY = -1 * p.maxVelY;
 				p.chain ++;
 				if (p.chain > 20) {
 					p.score += 100 * 20;
+					ftext = p.chain + ' chain\n100x20';
 				} else {
+					if (p.chain > 1) {
+						ftext = p.chain + ' chain\n100x' + p.chain;
+					} else {
+						ftext = '100';
+					}
 					p.score += 100 * p.chain;
 				}
+
+				console.log('boutta kill');
 				vm.kill(this.id);
+				console.log('oops');
+
+				floatyTexts[ft] = new FloatyText(ftext, player);
+				ft ++;
 			}
 			return;
 		}
@@ -321,6 +353,10 @@ let papi_info = document.getElementById('papiinfo');
 
 let player = new Player('player');
 
+let running = false;
+
+let floatyTexts = [];
+let ft = 0;
 
 // set up background
 let sky = document.getElementById('sky');
@@ -344,7 +380,13 @@ player.rep.style.top = base_y + 'px';
 
 window.onkeydown = function(e) {
     let key = e.keyCode ? e.keyCode : e.which;
-		keys[key] = true;
+	keys[key] = true;
+	
+	if (keys[87] || keys[38] || keys[32]) {
+		if (! running) {
+			startGame(60);
+		}
+	}
 }
 
 window.onkeyup = function(e) {
@@ -395,7 +437,7 @@ function startGame(fps) {
 	document.getElementById('ground').style.display = 'block';
 	document.getElementById('player').style.display = 'block';
 	ground.style.top = base_y + player.rep.clientHeight + 'px';
-
+	running = true;
 	player.alive = true;
 
     fpsInterval = 1000 / fps;
@@ -425,6 +467,19 @@ function runGame() {
 		vm.update();
 		vm.checkCollision();
 
+		for (let i = 0; i < floatyTexts.length; i++) {
+			console.log('updating?');
+			if (floatyTexts[i] != null) {
+				if (floatyTexts[i].moving) {
+					console.log('updating!');
+					console.log(floatyTexts[i]);
+					floatyTexts[i].update();
+				} else {
+					floatyTexts[i] = null;
+				}
+			}
+		}
+
 		let score = document.getElementsByClassName('score')[0];
 		score.innerHTML = 'Score: ' + player.score;
 		recent_score = player.score;
@@ -440,6 +495,7 @@ function reset() {
 			vm.remove(i);
 		}
 	}
+	running = false;
 
 	// summon menu screen veggies
 	onion.summon('Left');
@@ -464,6 +520,8 @@ function reset() {
 	document.getElementById('sky').style.display = 'none';
 	document.getElementById('ground').style.display = 'none';
 	document.getElementById('player').style.display = 'none';
+	floatyTexts = [];
+	ft = 0;
 	document.body.removeChild(document.getElementsByClassName('score')[0]);
 	
 	player = null;
