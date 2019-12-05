@@ -171,7 +171,7 @@ class Vegetable {
 			this.rep.style.top = base_y + player.rep.clientHeight - 130 + 'px';
 			this.score = 130;
 		} else if (this.type == 'carrot') {
-			this.rep.style.top = base_y + player.rep.clientHeight - 290 + 'px';
+			this.rep.style.top = base_y + player.rep.clientHeight - 300 + 'px';
 			this.score = 170;
 		}
 
