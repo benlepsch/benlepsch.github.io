@@ -161,10 +161,13 @@ class Vegetable {
 		// get the y right, this never needs to be changed
 		if (this.type == 'onion') {
 			this.rep.style.top = base_y + player.rep.clientHeight - 100 + 'px';
+			this.score = 100;
 		} else if (this.type == 'cabbage') {
 			this.rep.style.top = base_y + player.rep.clientHeight - 130 + 'px';
+			this.score = 130;
 		} else if (this.type == 'carrot') {
 			this.rep.style.top = base_y + player.rep.clientHeight - 290 + 'px';
+			this.score = 170;
 		}
 
 		if (this.direction == 'Right') {
@@ -232,13 +235,13 @@ class Vegetable {
 				p.velocityY = -1 * p.maxVelY;
 				p.chain ++;
 				if (p.chain > 20) {
-					p.score += 100 * 20;
-					ftext = p.chain + ' chain<br>100x20';
+					p.score += this.score * 20;
+					ftext = p.chain + ' chain<br>' + this.score + 'x20';
 				} else {
 					if (p.chain > 1) {
-						ftext = p.chain + ' chain<br>100x' + p.chain;
+						ftext = p.chain + ' chain<br>' + this.score + 'x' + p.chain;
 					} else {
-						ftext = '100';
+						ftext = '' + this.score;
 					}
 					p.score += 100 * p.chain;
 				}
