@@ -264,6 +264,28 @@ class Vegetable {
 		if (( playerLeft > vegLeft && playerLeft < vegRight ) &&
 		(( (playerTop < vegTop && playerTop > vegBottom) ||
 		(playerBottom > vegTop && playerBottom < vegBottom )))) {
+			if (cheats) {
+				let ftext = '';
+				p.velocityY = -1 * p.maxVelY;
+				p.chain ++;
+				if (p.chain > 20) {
+					p.score += this.score * 20;
+					ftext = p.chain + ' chain<br>' + this.score + 'x20';
+				} else {
+					if (p.chain > 1) {
+						ftext = p.chain + ' chain<br>' + this.score + 'x' + p.chain;
+					} else {
+						ftext = '' + this.score;
+					}
+					p.score += this.score * p.chain;
+				}
+
+				vm.kill(this.id);
+
+				floatyTexts[ft] = new FloatyText(ftext, player);
+				ft ++;
+				return;
+			}
 			p.alive = false;
 			return;
 		}
@@ -274,6 +296,28 @@ class Vegetable {
 		if (( playerRight > vegLeft && playerRight < vegRight ) &&
 		(( (playerTop < vegTop && playerTop > vegBottom) ||
 		(playerBottom > vegTop && playerBottom < vegBottom )))) {
+			if (cheats) {
+				let ftext = '';
+				p.velocityY = -1 * p.maxVelY;
+				p.chain ++;
+				if (p.chain > 20) {
+					p.score += this.score * 20;
+					ftext = p.chain + ' chain<br>' + this.score + 'x20';
+				} else {
+					if (p.chain > 1) {
+						ftext = p.chain + ' chain<br>' + this.score + 'x' + p.chain;
+					} else {
+						ftext = '' + this.score;
+					}
+					p.score += this.score * p.chain;
+				}
+
+				vm.kill(this.id);
+
+				floatyTexts[ft] = new FloatyText(ftext, player);
+				ft ++;
+				return;
+			}
 			p.alive = false;
 			return;
 		}
@@ -285,6 +329,28 @@ class Vegetable {
 			// and if its left is between the veggie's right and left or if its right is between veggie right and left
 			if ((playerLeft > vegLeft && playerLeft < vegRight) ||
 			(playerRight > vegLeft && playerRight < vegRight)) {
+				if (cheats) {
+					let ftext = '';
+					p.velocityY = -1 * p.maxVelY;
+					p.chain ++;
+					if (p.chain > 20) {
+						p.score += this.score * 20;
+						ftext = p.chain + ' chain<br>' + this.score + 'x20';
+					} else {
+						if (p.chain > 1) {
+							ftext = p.chain + ' chain<br>' + this.score + 'x' + p.chain;
+						} else {
+							ftext = '' + this.score;
+						}
+						p.score += this.score * p.chain;
+					}
+	
+					vm.kill(this.id);
+	
+					floatyTexts[ft] = new FloatyText(ftext, player);
+					ft ++;
+					return;
+				}
 				p.alive = false;
 				return;
 			}
@@ -359,6 +425,7 @@ class Player {
 let base_y = Math.floor($(window).height()*2 /3);
 let recent_score = 0;
 let best_score = 0;
+let cheats = false;
 
 let recent = document.getElementById('recent');
 let best = document.getElementById('best');
