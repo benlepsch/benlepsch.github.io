@@ -237,7 +237,7 @@ class Vegetable {
 				////console.log('HIT');
 				// kill the vegetable and increase player's acceleration
 				let ftext = '';
-				p.velocityY = -1 * p.maxVelY;
+				p.jumpin = true;
 				p.chain ++;
 				if (p.chain > 20) {
 					p.score += this.score * 20;
@@ -266,7 +266,7 @@ class Vegetable {
 		(playerBottom > vegTop && playerBottom < vegBottom )))) {
 			if (cheats) {
 				let ftext = '';
-				p.velocityY = -1 * p.maxVelY;
+				p.jumpin = true;
 				p.chain ++;
 				if (p.chain > 20) {
 					p.score += this.score * 20;
@@ -298,7 +298,7 @@ class Vegetable {
 		(playerBottom > vegTop && playerBottom < vegBottom )))) {
 			if (cheats) {
 				let ftext = '';
-				p.velocityY = -1 * p.maxVelY;
+				p.jumpin = true;
 				p.chain ++;
 				if (p.chain > 20) {
 					p.score += this.score * 20;
@@ -331,7 +331,7 @@ class Vegetable {
 			(playerRight > vegLeft && playerRight < vegRight)) {
 				if (cheats) {
 					let ftext = '';
-					p.velocityY = -1 * p.maxVelY;
+					p.jumpin = true;
 					p.chain ++;
 					if (p.chain > 20) {
 						p.score += this.score * 20;
@@ -385,6 +385,7 @@ class Player {
 		this.rep.style.left = Math.round($(window).width()/2) + 'px';
 		
 		this.alive = true;
+		this.jumpin = false;
 
 		this.score = 0;
 		this.chain = 0;
@@ -478,7 +479,7 @@ window.onkeyup = function(e) {
 function checkKeys() {
 	if (keys[87] || keys[38] || keys[32]) {
 		if (parseInt(player.rep.style.top) == base_y) {
-			player.velocityY = -1 * player.maxVelY;
+			player.jumpin = true;
 		}
 	}
 	if (keys[65] || keys[37]) {
@@ -541,6 +542,12 @@ function runGame() {
     if (elapsed > fpsInterval) {
 		then = now - (elapsed % fpsInterval);
 		checkKeys();
+
+		if (player.jumpin) {
+			player.velocityY = -1 * player.maxVelY;
+			player.jumpin = false;
+		}
+
 		player.update();
 		if (vm.isTime()) {
 			vm.add();
