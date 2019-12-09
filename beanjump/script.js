@@ -435,6 +435,12 @@ let papi_info = document.getElementById('papiinfo');
 
 let player = new Player('player');
 
+let score = document.createElement('div');
+score.classList.add('score');
+score.innerHTML = 'Score: 0';
+document.body.appendChild(score);
+score.style.display = 'none';
+
 let running = false;
 
 let floatyTexts = [];
@@ -510,17 +516,14 @@ function startGame(fps) {
 	recent.style.display = 'none';
 	best.style.display = 'none';
 
-	let score = document.createElement('div');
-	score.classList.add('score');
-	score.innerHTML = 'Score: 0';
-	document.body.appendChild(score);
-
 	document.getElementById('sky').style.display = 'block';
 	document.getElementById('ground').style.display = 'block';
 	document.getElementById('player').style.display = 'block';
 	ground.style.top = base_y + player.rep.clientHeight + 'px';
 	running = true;
 	player.alive = true;
+
+	document.getElementsByClassName('score')[0].style.display = 'block';
 
     fpsInterval = 1000 / fps;
     then = Date.now();
@@ -619,7 +622,7 @@ function reset() {
 
 	floatyTexts = [];
 	ft = 0;
-	document.body.removeChild(document.getElementsByClassName('score')[0]);
+	document.getElementsByClassName('score')[0].style.display = 'none';
 	
 	player = null;
 	vm = null;
