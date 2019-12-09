@@ -514,7 +514,7 @@ function checkKeys() {
 	if (keys[68] || keys[39]) {
 		player.accelX = 20;
 	}
-	if (keys[80]) {
+	if (keys[80] || keys[40] || keys[83]) {
 		if (unpaused) {
 			pause();
 		} else {
