@@ -9,17 +9,26 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body style="overflow:hidden">
-    <button id="start" onclick="startGame(60)">Start Game</button>
-    <h1 id='recent'>Recent score: 0</h1>
-    <h1 id='best'>Best score: 0</h1>
-    <p id='papiinfo'>
-      hi <br>
-      this is a papi trampoline clone i made because i couldn't find the original game online<br>
-      download the real papi trampoline for windows <a href='http://www.sunflat.net/windows/app/papitrampoline/'>here</a>
-    </p>
-    <div id='sky' class='sky' style="display: none"></div>
-    <div id='ground' class='ground' style="display: none"></div>
-    <img id='player' class='player' style="display: none" src='images/bean.png'>
+    <div id='pause_stuff'>
+      <div class='pause_background'></div>
+    </div>
+    <div id='menu_stuff'>
+      <button id="start" onclick="startGame(60)">Start Game</button>
+      <h1 id='recent'>Recent score: 0</h1>
+      <h1 id='best'>Best score: 0</h1>
+      <p id='papiinfo'>
+        hi <br>
+        this is a papi trampoline clone i made because i couldn't find the original game online<br>
+        download the real papi trampoline for windows <a href='http://www.sunflat.net/windows/app/papitrampoline/'>here</a>
+      </p>
+    </div>
+
+    <div id='game_stuff'>
+      <div id='sky' class='sky' style="display: none"></div>
+      <div id='ground' class='ground' style="display: none"></div>
+      <img id='player' class='player' style="display: none" src='images/bean.png'>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

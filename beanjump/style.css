@@ -38,3 +38,13 @@
     color: yellow;
     font-size: 300%;
 }
+
+.pause_background {
+    background-color: darkblue;
+    position: absolute;
+}
+
+.pause_text {
+    position: absolute;
+    
+}

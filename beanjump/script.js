@@ -8,6 +8,20 @@ function constrain(val, min, max) { // used in moving player around
 	return val;
 }
 
+function pause() {
+	if ((new Date().getTime() - lastPaused)/1000 > 1) {
+		unpaused = false;
+		lastPaused = new Date().getTime();
+	}
+}
+
+function unpause() {
+	if ((new Date().getTime() - lastPaused)/1000 > 1) {
+		unpaused = true;
+		lastPaused = new Date().getTime();
+	}
+}
+
 class FloatyText {
 	constructor(txt, player) {
 		this.id = ft;
@@ -428,6 +442,9 @@ let recent_score = 0;
 let best_score = 0;
 let cheats = false;
 
+let unpaused = true;
+let lastPaused = new Date().getTime();
+
 let recent = document.getElementById('recent');
 let best = document.getElementById('best');
 
@@ -462,6 +479,9 @@ ground.style.height = $(window).height() - (base_y + player.rep.clientHeight) + 
 ground.style.top = base_y + player.rep.clientHeight + 'px';
 ground.style.left = '0px';
 
+let pause_stuff = document.getElementById('pause_stuff');
+let pbg = document.getElementsByClassName('pause_background')[0];
+
 let keys = {};
 
 player.rep.style.top = base_y + 'px';
@@ -493,6 +513,13 @@ function checkKeys() {
 	}
 	if (keys[68] || keys[39]) {
 		player.accelX = 20;
+	}
+	if (keys[80]) {
+		if (unpaused) {
+			pause();
+		} else {
+			unpause();
+		}
 	}
 }
 
@@ -542,9 +569,9 @@ function runGame() {
 	now = Date.now();
     elapsed = now - then;
 
-    if (elapsed > fpsInterval) {
+	checkKeys();
+    if (elapsed > fpsInterval && unpaused) {
 		then = now - (elapsed % fpsInterval);
-		checkKeys();
 
 		if (player.jumpin) {
 			player.velocityY = -1 * player.maxVelY;
