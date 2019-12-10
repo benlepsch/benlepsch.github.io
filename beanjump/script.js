@@ -76,6 +76,7 @@ class FloatyText {
 		this.me.style.left = parseInt(player.rep.style.left) + player.rep.clientWidth/2 - this.me.clientWidth/2 + 'px';
 		this.me.style.top = parseInt(player.rep.style.top) + player.rep.clientHeight/2 - this.me.clientHeight/2 + 'px';
 		//console.log(this.me.clientWidth);
+		this.me.style.zIndex = 300;
 		this.moving = true;
 		this.me.style.opacity = 1;
 	}
