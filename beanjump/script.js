@@ -12,13 +12,46 @@ function pause() {
 	if ((new Date().getTime() - lastPaused)/1000 > 1) {
 		unpaused = false;
 		lastPaused = new Date().getTime();
+
+		// need to make the pause text and background each time because otherwise it blocks the menu screen button and link
+		let p_background = document.createElement('div');
+		p_background.setAttribute('id','pause_background');
+		p_background.classList.add('pause_background');
+		p_background.style.width = $(window).width() + 'px';
+		p_background.style.height = $(window).height() + 'px';
+		p_background.style.left = '0px';
+		p_background.style.top = '0px';
+		document.body.appendChild(p_background);
+		p_background.style.zIndex = 400;
 	}
 }
 
 function unpause() {
 	if ((new Date().getTime() - lastPaused)/1000 > 1) {
-		unpaused = true;
-		lastPaused = new Date().getTime();
+		document.body.removeChild(document.getElementById('pause_background'));
+		let countdown = document.createElement('div');
+		countdown.classList.add('countdown');
+		countdown.innerHTML = '3';
+		document.body.appendChild(countdown);
+		countdown.style.zIndex = 400;
+		countdown.style.left = $(window).width()/2 - countdown.clientWidth/2 + 'px';
+		countdown.style.top = $(window).height()/2 - countdown.clientHeight/2 + 'px';
+
+		setTimeout(function() {
+			countdown.innerHTML = '2';
+			countdown.style.left = $(window).width()/2 - countdown.clientWidth/2 + 'px';
+			countdown.style.top = $(window).height()/2 - countdown.clientHeight/2 + 'px';
+		}, 1000);
+		setTimeout(function() {
+			countdown.innerHTML = '1';
+			countdown.style.left = $(window).width()/2 - countdown.clientWidth/2 + 'px';
+			countdown.style.top = $(window).height()/2 - countdown.clientHeight/2 + 'px';
+		}, 2000);
+		setTimeout(function() { 
+			document.body.removeChild(countdown);
+			unpaused = true;
+			lastPaused = new Date().getTime();
+		}, 3000);
 	}
 }
 
@@ -478,9 +511,6 @@ ground.style.width = $(window).width() + 'px';
 ground.style.height = $(window).height() - (base_y + player.rep.clientHeight) + 'px';
 ground.style.top = base_y + player.rep.clientHeight + 'px';
 ground.style.left = '0px';
-
-let pause_stuff = document.getElementById('pause_stuff');
-let pbg = document.getElementsByClassName('pause_background')[0];
 
 let keys = {};
 

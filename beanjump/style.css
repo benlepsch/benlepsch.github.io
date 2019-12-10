@@ -2,20 +2,24 @@
     position: absolute;
     width: 70px;
     height: 50px;
+    z-index: 95;
 }
 
 .ground {
     background-color: #19e03a;
     position: absolute;
+    z-index: 90;
 }
 
 .sky {
     background-color: #19869c;
     position: absolute;
+    z-index: 89;
 }
 
 .vegetable {
     position: absolute;
+    z-index: 91;
 }
 
 .score {
@@ -23,6 +27,7 @@
     color: white;
     font-size: 400%;
     text-shadow: 2px 2px 0px black;
+    z-index: 92;
 }
 
 .flipped {
@@ -40,11 +45,20 @@
 }
 
 .pause_background {
-    background-color: darkblue;
+    background-color: black;
     position: absolute;
 }
 
 .pause_text {
     position: absolute;
-    
+    text-align: center;
+    color: blue;
+    font-size: 500%;
+}
+
+.countdown {
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 500%;
 }
