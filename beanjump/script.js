@@ -23,27 +23,37 @@ function pause() {
 		p_background.style.top = '0px';
 		document.body.appendChild(p_background);
 		p_background.style.zIndex = 400;
+
+		let p_text = document.createElement('div');
+		p_text.setAttribute('id', 'pause_text');
+		p_text.classList.add('pause_text');
+		p_text.innerHTML = 'Paused<br>Press S, P, or the down arrow to continue';
+		document.body.appendChild(p_text);
+		p_text.style.left = $(window).width()/2 - p_text.clientWidth/2 + 'px';
+		p_text.style.top = $(window).height()/2 - p_text.clientHeight/2 + 'px';
+		p_text.style.zIndex = 401;
 	}
 }
 
 function unpause() {
 	if ((new Date().getTime() - lastPaused)/1000 > 1) {
 		document.body.removeChild(document.getElementById('pause_background'));
+		document.body.removeChild(document.getElementById('pause_text'));
 		let countdown = document.createElement('div');
 		countdown.classList.add('countdown');
-		countdown.innerHTML = '3';
+		countdown.innerHTML = '<b>3</b>';
 		document.body.appendChild(countdown);
 		countdown.style.zIndex = 400;
 		countdown.style.left = $(window).width()/2 - countdown.clientWidth/2 + 'px';
 		countdown.style.top = $(window).height()/2 - countdown.clientHeight/2 + 'px';
 
 		setTimeout(function() {
-			countdown.innerHTML = '2';
+			countdown.innerHTML = '<b>2</b>';
 			countdown.style.left = $(window).width()/2 - countdown.clientWidth/2 + 'px';
 			countdown.style.top = $(window).height()/2 - countdown.clientHeight/2 + 'px';
 		}, 1000);
 		setTimeout(function() {
-			countdown.innerHTML = '1';
+			countdown.innerHTML = '<b>1</b>';
 			countdown.style.left = $(window).width()/2 - countdown.clientWidth/2 + 'px';
 			countdown.style.top = $(window).height()/2 - countdown.clientHeight/2 + 'px';
 		}, 2000);
