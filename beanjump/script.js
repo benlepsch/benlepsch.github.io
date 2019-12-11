@@ -614,9 +614,11 @@ window.onload = function() {
 
 	for (let i = 0; i < c.length; i++) {
 		if (c[i].slice(0,10) == 'highscore=') {
-			best_score = parseInt(c[i].slice(10, c.length));
+			best_score = (c[i].slice(10, c.length));
+			console.log('setting best score to ' + c[i].slice(10, c.length));
 		} else if (c[i].slice(0, 11) == ' highscore=') {
-			best_score = parseInt(c[i].slice(11, c.length));
+			best_score = (c[i].slice(11, c.length));
+			console.log('setting best score to ' + c[i].slice(11, c.length));
 		}
 	}
 }
