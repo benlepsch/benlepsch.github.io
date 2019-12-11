@@ -133,13 +133,17 @@ class VegetableManager {
 		// this will vary based on how long the game has been going on. 0-10 seconds only onions, then peppers and onions until 20 seconds, then all three.
 
 		// set a random type depending on how long the game has been going for
-		let since = Math.round((current - this.begin)/1000);
-		if (since < 10) {
-			this.veggies[this.onVeg].type = this.types[0];
-		} else if (since < 20) {
-			this.veggies[this.onVeg].type = this.types[Math.floor(Math.random()*2)];
+		if (carrots_only) {
+			this.veggies[this.onVeg].type = this.types[2];
 		} else {
-			this.veggies[this.onVeg].type = this.types[Math.floor(Math.random()*3)];
+			let since = Math.round((current - this.begin)/1000);
+			if (since < 10) {
+				this.veggies[this.onVeg].type = this.types[0];
+			} else if (since < 20) {
+				this.veggies[this.onVeg].type = this.types[Math.floor(Math.random()*2)];
+			} else {
+				this.veggies[this.onVeg].type = this.types[Math.floor(Math.random()*3)];
+			}
 		}
 		
 		this.veggies[this.onVeg].direction = ['Right','Left'][Math.floor(Math.random()*2)];
@@ -495,6 +499,13 @@ class Player {
 		this.rep.style.left = parseInt(this.rep.style.left) + this.velocityX + 'px';
 		this.rep.style.top = constrain(parseInt(this.rep.style.top) + this.velocityY, 0, base_y) + 'px';
 	}
+}
+
+let carrots_only = false;
+
+function changeCarrots() {
+	carrots_only = !carrots_only;
+	alert('carrots only has been ' + ((carrots_only) ? 'enabled' : 'disabled'));
 }
 
 // determine where to draw the ground
