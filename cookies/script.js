@@ -1,5 +1,7 @@
 let bruh = document.getElementById('bruh');
 
+window.onload = refresh();
+
 function update() {
     let text = prompt('put somethig');
     updateCookie(text);
