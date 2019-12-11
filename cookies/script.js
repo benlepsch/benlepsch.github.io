@@ -17,6 +17,9 @@ function refresh() {
         if (cookietext[i].slice(0,8) == 'cookie1=') {
             bruh.innerHTML = cookietext[i].slice(8,cookietext[i].length);
             return;
+        } else if (cookietext[i].slice(0, 9) == ' cookie1=') {
+            bruh.innerHTML = cookietext[i].slice(9, cookietext[i].length);
+            return;
         }
     }
 }
