@@ -603,6 +603,25 @@ function checkKeys() {
 	}
 }
 
+function updateCookie(name, value) {
+	document.cookie = name + '=' + value + ';';
+}
+
+// read cookies for high score and keybinds, if they exist
+window.onload = function() {
+	if (document.cookie == '') return;
+	let c = document.cookie.split(';');
+
+	for (let i = 0; i < c.length; i++) {
+		if (c[i].slice(0,10) == 'highscore=') {
+			best_score = parseInt(c[i].slice(10, c.length));
+		} else if (c[i].slice(0, 11) == ' highscore=') {
+			best_score = parseInt(c[i].slice(11, c.length));
+		}
+	}
+}
+
+
 //runs the game at a specified fps
 //dont touch i dont know how it works
 
@@ -709,6 +728,7 @@ function reset() {
 	document.getElementById('menu_stuff').style.display = 'block';
 	recent.innerHTML = 'Recent score: ' + recent_score;
 	best.innerHTML = 'Best score: ' + best_score;
+	updateCookie('highscore', best_score);
 
 	// remove game stuff
 	document.getElementById('sky').style.display = 'none';
