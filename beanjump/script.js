@@ -565,6 +565,8 @@ window.onkeydown = function(e) {
 			left_key = key;
 		}
 		rebinding = null;
+
+		updateCookie('keys', left_key + ',' + jump_key + ',' + right_key + ',' + pause_key);
 		return;
 	}
 
@@ -619,6 +621,20 @@ window.onload = function() {
 		} else if (c[i].slice(0, 11) == ' highscore=') {
 			best_score = (c[i].slice(11, c[0].length));
 			document.getElementById('best').innerHTML = 'Best score: ' + best_score;
+		}
+
+		if (c[i].slice(0,5) == 'keys=') {
+			let ka = c[i].slice(5, c[i].length).split(',');
+			left_key = parseInt(ka[0]);
+			jump_key = parseInt(ka[1]);
+			right_key = parseInt(ka[2]);
+			pause_key = parseInt(ka[3]);
+		} else if (c[i].slice(0,6) == ' keys=') {
+			let ka = c[i].slice(5, c[i].length).split(',');
+			left_key = parseInt(ka[0]);
+			jump_key = parseInt(ka[1]);
+			right_key = parseInt(ka[2]);
+			pause_key = parseInt(ka[3]);
 		}
 	}
 }
