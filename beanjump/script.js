@@ -8,6 +8,23 @@ function constrain(val, min, max) { // used in moving player around
 	return val;
 }
 
+function getCharFromCode(code) {
+	if (code == 40) {
+		return 'DOWN_ARROW';
+	}
+	if (code == 39) {
+		return 'RIGHT_ARROW';
+	}
+	if (code == 38) {
+		return 'UP_ARROW';
+	}
+	if (code == 37) {
+		return 'LEFT_ARROW';
+	}
+
+	return String.fromCharCode(code);
+}
+
 function pause() {
 	if ((new Date().getTime() - lastPaused)/1000 > 1) {
 		unpaused = false;
@@ -27,7 +44,7 @@ function pause() {
 		let p_text = document.createElement('div');
 		p_text.setAttribute('id', 'pause_text');
 		p_text.classList.add('pause_text');
-		p_text.innerHTML = 'Paused<br>Press S, P, or the down arrow to continue';
+		p_text.innerHTML = 'Paused<br>Press ' + getCharFromCode(pause_key) + ' to continue';
 		document.body.appendChild(p_text);
 		p_text.style.left = $(window).width()/2 - p_text.clientWidth/2 + 'px';
 		p_text.style.top = $(window).height()/2 - p_text.clientHeight/2 + 'px';
@@ -523,15 +540,37 @@ ground.style.height = $(window).height() - (base_y + player.rep.clientHeight) + 
 ground.style.top = base_y + player.rep.clientHeight + 'px';
 ground.style.left = '0px';
 
+let jump_key = 38, left_key = 37, right_key = 39, pause_key = 40;
 let keys = {};
 
 player.rep.style.top = base_y + 'px';
 
+let rebinding = null;
+
+function rebind(key) {
+	rebinding = key;
+}
+
 window.onkeydown = function(e) {
-    let key = e.keyCode ? e.keyCode : e.which;
+	let key = e.keyCode ? e.keyCode : e.which;
+
+	if (rebinding != null) {
+		if (rebinding == 'jump') {
+			jump_key = key;
+		} else if (rebinding == 'pause') {
+			pause_key = key;
+		} else if (rebinding == 'right') {
+			right_key = key;
+		} else {
+			left_key = key;
+		}
+		rebinding = null;
+		return;
+	}
+
 	keys[key] = true;
 	
-	if (keys[87] || keys[38] || keys[32]) {
+	if (keys[jump_key]) {
 		if (! running) {
 			startGame(60);
 		}
@@ -544,18 +583,18 @@ window.onkeyup = function(e) {
 }
 
 function checkKeys() {
-	if (keys[87] || keys[38] || keys[32]) {
+	if (keys[jump_key]) {
 		if (parseInt(player.rep.style.top) == base_y) {
 			player.jumpin = true;
 		}
 	}
-	if (keys[65] || keys[37]) {
+	if (keys[left_key]) {
 		player.accelX = -20;
 	}
-	if (keys[68] || keys[39]) {
+	if (keys[right_key]) {
 		player.accelX = 20;
 	}
-	if (keys[80] || keys[40] || keys[83]) {
+	if (keys[pause_key]) {
 		if (unpaused) {
 			pause();
 		} else {
@@ -579,10 +618,7 @@ function startGame(fps) {
 	document.body.removeChild(onion.rep);
 	document.body.removeChild(cabbage.rep);
 	document.body.removeChild(carrot.rep);
-	document.getElementById('start').style.display = 'none';
-	papi_info.style.display = 'none';
-	recent.style.display = 'none';
-	best.style.display = 'none';
+	document.getElementById('menu_stuff').style.display = 'none';
 
 	document.getElementById('sky').style.display = 'block';
 	document.getElementById('ground').style.display = 'block';
@@ -670,12 +706,9 @@ function reset() {
 	carrot.rep.style.top = $(window).height()/3 + 'px';
 
 	// bring back start button and score displays
-	document.getElementById('start').style.display = 'block';
-	recent.style.display = 'block';
-	best.style.display = 'block';
+	document.getElementById('menu_stuff').style.display = 'block';
 	recent.innerHTML = 'Recent score: ' + recent_score;
 	best.innerHTML = 'Best score: ' + best_score;
-	papi_info.style.display = 'block';
 
 	// remove game stuff
 	document.getElementById('sky').style.display = 'none';
