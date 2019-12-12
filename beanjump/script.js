@@ -113,7 +113,6 @@ class FloatyText {
 class VegetableManager {
 	constructor() {
 		this.veggies = []; // holds Vegetable objects
-		this.onVeg = 0; // indexes vegetables
 		this.begin = new Date().getTime();
 		this.last = this.begin;
 		this.cooldown = 0;
@@ -127,29 +126,30 @@ class VegetableManager {
 		let dt = Math.round((current - this.last)/1000); // delta milliseconds to seconds, used for generating cooldown
 		this.last = current;
 
-		this.veggies[this.onVeg] = new Vegetable(this.onVeg);
-		
+		let nv = new Vegetable();		
 		// need to set a type
 		// this will vary based on how long the game has been going on. 0-10 seconds only onions, then peppers and onions until 20 seconds, then all three.
 
 		// set a random type depending on how long the game has been going for
 		if (carrots_only) {
-			this.veggies[this.onVeg].type = this.types[2];
+			nv.type = this.types[2];
 		} else {
 			let since = Math.round((current - this.begin)/1000);
 			if (since < 10) {
-				this.veggies[this.onVeg].type = this.types[0];
+				nv.type = this.types[0];
 			} else if (since < 20) {
-				this.veggies[this.onVeg].type = this.types[Math.floor(Math.random()*2)];
+				nv.type = this.types[Math.floor(Math.random()*2)];
 			} else {
-				this.veggies[this.onVeg].type = this.types[Math.floor(Math.random()*3)];
+				nv.type = this.types[Math.floor(Math.random()*3)];
 			}
 		}
 		
-		this.veggies[this.onVeg].direction = ['Right','Left'][Math.floor(Math.random()*2)];
+		nv.direction = ['Right','Left'][Math.floor(Math.random()*2)];
 
 		// handles creating the image and blitting into the right spot
-		this.veggies[this.onVeg].init();
+		nv.init();
+
+		this.veggies.push(nv);
 
 		// then set a new cooldown
 		// oh god
@@ -166,8 +166,6 @@ class VegetableManager {
 
 		// set cooldown from 30 to upperTick
 		this.cooldown = Math.round(Math.random() * this.upperTick) + this.lowerTick;
-
-		this.onVeg ++;
 	}
 
 	// decide if a new veg is to be added
@@ -188,7 +186,7 @@ class VegetableManager {
 	update() {
 		for (let i = 0; i < this.veggies.length; i++) {
 			if (this.veggies[i] != null && this.veggies[i] != undefined) {
-				this.veggies[i].update();
+				this.veggies[i].update(i);
 			}
 		}
 	}
@@ -196,7 +194,7 @@ class VegetableManager {
 	// remove for veggies that go off the side
 	remove(id) {
 		document.body.removeChild(this.veggies[parseInt(id)].rep);
-		this.veggies[parseInt(id)] = null;
+		this.veggies.splice(id, 1);
 	}
 
 	// remove for veggies that get killed
@@ -210,15 +208,14 @@ class VegetableManager {
 	checkCollision() {
 		for (let i = 0; i < this.veggies.length; i++) {
 			if (this.veggies[i] != null && this.veggies[i] != undefined) {
-				this.veggies[i].colliding(player);
+				this.veggies[i].colliding(player, i);
 			}
 		}
 	}
 }
 
 class Vegetable {
-	constructor(id) {
-		this.id = id;
+	constructor() {
 		this.alive = true;
 		this.speed = Math.floor(Math.random() * 8) + 4;
 		this.velY = 0;
@@ -259,7 +256,7 @@ class Vegetable {
 		}
 	}
 
-	update() {
+	update(id) {
 		if (this.alive) {
 			this.rep.style.left = parseInt(this.rep.style.left) + this.speed + 'px';
 		} else {
@@ -269,19 +266,19 @@ class Vegetable {
 
 		// if its off the screen to the right or left
 		if (parseInt(this.rep.style.left) > $(window).width() || parseInt(this.rep.style.left) + this.rep.clientWidth < 0) {
-			vm.remove(this.id);
+			vm.remove(id);
 		}
 
 		// if it's below the screen
 		// this only activates when it dies
 		if (parseInt(this.rep.style.top) > $(window).height()) {
-			vm.remove(this.id);
+			vm.remove(id);
 		}
 	}
 
 	// if killing player, kill him and then reset the game
 	// if dying, add player y acceleration and then remove
-	colliding(p) {
+	colliding(p, id) {
 		// i'm going to collision detect after the player gets a little bit inside of the veg because that's how the real game looks
 		// ok then
 	
@@ -330,7 +327,7 @@ class Vegetable {
 					p.score += this.score * p.chain;
 				}
 
-				vm.kill(this.id);
+				vm.kill(id);
 
 				floatyTexts[ft] = new FloatyText(ftext, player);
 				ft ++;
@@ -359,7 +356,7 @@ class Vegetable {
 					p.score += this.score * p.chain;
 				}
 
-				vm.kill(this.id);
+				vm.kill(id);
 
 				floatyTexts[ft] = new FloatyText(ftext, player);
 				ft ++;
@@ -391,7 +388,7 @@ class Vegetable {
 					p.score += this.score * p.chain;
 				}
 
-				vm.kill(this.id);
+				vm.kill(id);
 
 				floatyTexts[ft] = new FloatyText(ftext, player);
 				ft ++;
@@ -424,7 +421,7 @@ class Vegetable {
 						p.score += this.score * p.chain;
 					}
 	
-					vm.kill(this.id);
+					vm.kill(id);
 	
 					floatyTexts[ft] = new FloatyText(ftext, player);
 					ft ++;
