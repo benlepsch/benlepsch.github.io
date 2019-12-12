@@ -84,10 +84,8 @@ function unpause() {
 
 class FloatyText {
 	constructor(txt, player) {
-		this.id = ft;
 		this.me = document.createElement('div');
 		this.me.classList.add('floaty');
-		this.me.setAttribute('id', this.id);
 		this.me.innerHTML = txt;
 		document.body.appendChild(this.me);
 		this.me.style.left = parseInt(player.rep.style.left) + player.rep.clientWidth/2 - this.me.clientWidth/2 + 'px';
@@ -329,8 +327,7 @@ class Vegetable {
 
 				vm.kill(id);
 
-				floatyTexts[ft] = new FloatyText(ftext, player);
-				ft ++;
+				floatyTexts.push(new FloatyText(ftext, player));
 			}
 			return;
 		}
@@ -358,8 +355,7 @@ class Vegetable {
 
 				vm.kill(id);
 
-				floatyTexts[ft] = new FloatyText(ftext, player);
-				ft ++;
+				floatyTexts.push(new FloatyText(ftext, player));
 				return;
 			}
 			p.alive = false;
@@ -390,8 +386,7 @@ class Vegetable {
 
 				vm.kill(id);
 
-				floatyTexts[ft] = new FloatyText(ftext, player);
-				ft ++;
+				floatyTexts.push(new FloatyText(ftext, player));
 				return;
 			}
 			p.alive = false;
@@ -423,8 +418,7 @@ class Vegetable {
 	
 					vm.kill(id);
 	
-					floatyTexts[ft] = new FloatyText(ftext, player);
-					ft ++;
+					floatyTexts.push(new FloatyText(ftext, player));
 					return;
 				}
 				p.alive = false;
@@ -530,7 +524,6 @@ score.style.display = 'none';
 let running = false;
 
 let floatyTexts = [];
-let ft = 0;
 
 // set up background
 let sky = document.getElementById('sky');
@@ -708,7 +701,8 @@ function runGame() {
 					//console.log(floatyTexts[i]);
 					floatyTexts[i].update();
 				} else {
-					floatyTexts[i] = null;
+					floatyTexts.splice(i, 1);
+					i --;
 				}
 			}
 		}
@@ -758,7 +752,6 @@ function reset() {
 	}
 
 	floatyTexts = [];
-	ft = 0;
 	document.getElementsByClassName('score')[0].style.display = 'none';
 	
 	player = null;
