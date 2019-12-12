@@ -158,8 +158,8 @@ class VegetableManager {
 		// but leave the min at 30 so you occasionally get 2 veggies at once early game
 		
 		if (this.upperTick - 2*dt < 30) {
-			this.upperTick = 45;
-			this.lowerTick = 15;
+			this.upperTick = 40;
+			this.lowerTick = 10;
 		} else {
 			this.upperTick -= 5*dt;
 		}
@@ -196,7 +196,7 @@ class VegetableManager {
 	// remove for veggies that go off the side
 	remove(id) {
 		document.body.removeChild(this.veggies[parseInt(id)].rep);
-		this.veggies[parseInt(id)] = null;
+		this.veggies.splice(parseInt(id), 1);
 	}
 
 	// remove for veggies that get killed
