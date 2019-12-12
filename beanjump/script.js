@@ -723,10 +723,9 @@ function runGame() {
 }
 
 function reset() {
-	for (let i = 0; i < vm.veggies.length; i++) {
-		if (vm.veggies[i] != null) {
-			vm.remove(i);
-		}
+	let vml = vm.veggies.length;
+	for (let i = 0; i < vml; i++) {
+		vm.remove(0);
 	}
 	running = false;
 
