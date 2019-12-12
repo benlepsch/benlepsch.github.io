@@ -433,10 +433,10 @@ class Vegetable {
 		}
 	}
 
-	summon(direction) {
+	summon(type, direction) {
 		this.rep = document.createElement('img');
 		this.rep.classList.add('vegetable');
-		this.rep.src = 'images/' + this.id + '.png';
+		this.rep.src = 'images/' + type + '.png';
 		if (direction == 'Right') {
 			this.rep.classList.add('mirror');
 		}
@@ -765,12 +765,12 @@ function reset() {
 	vm = null;
 }
 
-let onion = new Vegetable('onion');
-let cabbage = new Vegetable('cabbage');
-let carrot = new Vegetable('carrot');
-onion.summon('Left');
-cabbage.summon('Left');
-carrot.summon('Left');
+let onion = new Vegetable();
+let cabbage = new Vegetable();
+let carrot = new Vegetable();
+onion.summon('onion','Left');
+cabbage.summon('cabbage','Left');
+carrot.summon('carrot','Left');
 onion.rep.style.left = $(window).width()/2 + 'px';
 cabbage.rep.style.left = $(window).width()/2 + 'px';
 carrot.rep.style.left = $(window).width()/2 + 'px';
