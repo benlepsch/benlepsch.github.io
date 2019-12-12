@@ -196,7 +196,7 @@ class VegetableManager {
 	// remove for veggies that go off the side
 	remove(id) {
 		document.body.removeChild(this.veggies[parseInt(id)].rep);
-		this.veggies.splice(parseInt(id), 1);
+		this.veggies[parseInt(id)] = null;
 	}
 
 	// remove for veggies that get killed
