@@ -445,11 +445,12 @@ class Player {
 		this.velocityX = 0;
 		this.velocityY = 0;
 		this.accelX = 0;
-		this.accelY = 1.5; //gravity
+		this.gravity = 1.5; //gravity
+		this.jumpAccel = 100;
+		this.accelY = 0;
 
-		this.maxAccelX = 10;
-		this.maxVelX = 25;
-		this.maxVelY = 28;
+		this.maxVelX = 20;
+		this.maxVelY = 22;
 
 		this.rep = document.getElementById(this.id);
 		this.rep.style.left = Math.round($(window).width()/2) + 'px';
@@ -463,11 +464,12 @@ class Player {
 
 	update() {
 		this.velocityX = constrain(this.velocityX + this.accelX, -1*this.maxVelX, this.maxVelX);
-		this.velocityY = constrain(this.velocityY + this.accelY, -1*this.maxVelY, this.maxVelY);
+		this.velocityY = constrain(this.velocityY + this.gravity + this.accelY, -1*this.maxVelY, this.maxVelY);
 		////console.log("accel: " + this.accelX + "\tvel: " + this.velocityX);
 
 		this.velocityX = this.velocityX < 0 ? Math.ceil(this.velocityX/2) : Math.floor(this.velocityX/2);
-		this.accelX = 0;
+		this.accelX = this.accelX < 0 ? Math.ceil(this.accelX/4) : Math.floor(this.accelX/4);
+		this.accelY = this.accelY < 0 ? Math.ceil(this.accelY/4) : Math.floor(this.accelY/4);
 
 		// if it's going off the left side of the screen or if it's going to go off the left side of the screen
 		if ((parseInt(this.rep.style.left) <= 0 && this.velocityX < 0) || (parseInt(this.rep.style.left) + this.velocityX < 0)) {
@@ -592,10 +594,10 @@ function checkKeys() {
 		}
 	}
 	if (keys[left_key]) {
-		player.accelX = -20;
+		player.accelX -= 10;
 	}
 	if (keys[right_key]) {
-		player.accelX = 20;
+		player.accelX += 10;
 	}
 	if (keys[pause_key]) {
 		if (unpaused) {
@@ -680,7 +682,7 @@ function runGame() {
 		then = now - (elapsed % fpsInterval);
 
 		if (player.jumpin) {
-			player.velocityY = -1 * player.maxVelY;
+			player.accelY = -1 * player.jumpAccel;
 			player.jumpin = false;
 		}
 
