@@ -215,7 +215,7 @@ class VegetableManager {
 class Vegetable {
 	constructor() {
 		this.alive = true;
-		this.speed = Math.floor(Math.random() * 8) + 4;
+		this.speed = Math.floor(Math.random() * 4) + 4;
 		this.velY = 0;
 		this.maxVelY = 28;
 		this.accelY = 1.5;
@@ -446,11 +446,11 @@ class Player {
 		this.velocityY = 0;
 		this.accelX = 0;
 		this.gravity = 1.5; //gravity
-		this.jumpAccel = 100;
+		this.jumpAccel = 60;
 		this.accelY = 0;
 
-		this.maxVelX = 20;
-		this.maxVelY = 22;
+		this.maxVelX = 25;
+		this.maxVelY = 20;
 
 		this.rep = document.getElementById(this.id);
 		this.rep.style.left = Math.round($(window).width()/2) + 'px';
@@ -469,7 +469,7 @@ class Player {
 
 		this.velocityX = this.velocityX < 0 ? Math.ceil(this.velocityX/2) : Math.floor(this.velocityX/2);
 		this.accelX = this.accelX < 0 ? Math.ceil(this.accelX/4) : Math.floor(this.accelX/4);
-		this.accelY = this.accelY < 0 ? Math.ceil(this.accelY/4) : Math.floor(this.accelY/4);
+		this.accelY = this.accelY < 0 ? Math.ceil(this.accelY/2) : Math.floor(this.accelY/2);
 
 		// if it's going off the left side of the screen or if it's going to go off the left side of the screen
 		if ((parseInt(this.rep.style.left) <= 0 && this.velocityX < 0) || (parseInt(this.rep.style.left) + this.velocityX < 0)) {
