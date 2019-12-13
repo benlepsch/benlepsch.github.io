@@ -724,9 +724,9 @@ function reset() {
 	running = false;
 
 	// summon menu screen veggies
-	onion.summon('Left');
-	cabbage.summon('Left');
-	carrot.summon('Left');
+	onion.summon('onion','Left');
+	cabbage.summon('cabbage','Left');
+	carrot.summon('carrot','Left');
 	onion.rep.style.left = $(window).width()/2 + 'px';
 	cabbage.rep.style.left = $(window).width()/2 + 'px';
 	carrot.rep.style.left = $(window).width()/2 + 'px';
