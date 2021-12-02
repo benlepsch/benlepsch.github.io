@@ -1,0 +1,256 @@
+[
+    {
+        "builds" : {
+            "tank" : {
+                "runes" : "grasp - demolish - conditioning - overgrowth/unflinching // inspiration - boots - approach velocity",
+                "items" : [
+                    "hullbreaker",
+                    "frostfire/sunfire",
+                    "titanic hydra",
+                    "youmuu's ghostblade",
+                    "collector",
+                    "merc treads/tabis/swifties/berzerkers"
+                ]
+            },
+            "lethality" : {
+                "runes" : "phase rush - manaflow - absolute focus - gathering storm // resolve - demolish - conditioning",
+                "items" : [
+                    "prowlers claw",
+                    "youmuu's ghostblade",
+                    "collector",
+                    "lord dom's",
+                    "infinity edge",
+                    "merc treads/tabis/swifties/berzerkers"
+                ]
+            }
+        },
+        "matchups" : {
+            "aatrox" : {
+                "difficulty" : 4,
+                "best build" : "either",
+                "tips" : "try to do 2 minute bramble vest strat and proxy often"
+            },
+            "akali" : {
+                "difficulty" : 3,
+                "best build" : "tank",
+                "tips" : "akalis ridiculously weak pre 6, you win always unless she has w"
+            },
+            "camille" : {
+                "difficulty" : 4,
+                "best build" : "lethality",
+                "tips" : "hard lane and side lane vs camille, if you die vs her after she used E and W you can kill"
+            },
+            "darius" : {
+                "difficulty" : 4,
+                "best build" : "lethality",
+                "tips" : "very hard lane but you outscale if you hit ult, if you get hooked in do fast q > e > auto and run with phase rush"
+            },
+            "fiora" : {
+                "difficulty" : 3,
+                "best build" : "lethality",
+                "tips" : "stick to a wall when she ults, try to charge Q from bushes and stop ult before you knockup so she can't parry"
+            },
+            "gangplank" : {
+                "difficulty" : 2,
+                "best build" : "tank",
+                "tips" : "lane is manageable, use W to block q/barrel poke, e minion > ult post six should be free kill. tank build doesn't get one shot by him either"
+            },
+            "gnar" : {
+                "difficulty" : 3,
+                "best build" : "lethality",
+                "tips" : "mega gnar is very annoying with stuns, but mini gnar is punishable in lane becuase his jump is on a 20 second ish cooldown"
+            },
+            "gragas" : {
+                "difficulty" : 0,
+                "best build" : "either",
+                "tips" : "never played this matchup lmk how it goes"
+            },
+            "gwen" : {
+                "difficulty" : 5,
+                "best build" : "lethality",
+                "tips" : "impossible champion 200 years design"
+            },
+            "heimerdonger" : {
+                "difficulty" : 0,
+                "best build" : "either",
+                "tips" : "never played this matchup either"
+            },
+            "illaoi" : {
+                "difficulty" : 5,
+                "best build" : "lethality",
+                "tips" : "fuck illaoi"
+            },
+            "irelia" : {
+                "difficulty" : 5,
+                "best build" : "lethality",
+                "tips" : "impossible lane fuck irelia"
+            },
+            "jax" : {
+                "difficulty" : 4,
+                "best build" : "",
+                "tips" : ""
+            },
+            "jayce" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "kayle" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "kennen" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "kled" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "malphite" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "mordekaiser" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "mundo" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "nasus" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "ornn" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "poppy" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "quinn" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "renekton" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "rengar" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "riven" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "rumble" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "sett" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "shen" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "singed" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "sion" : {
+                "difficulty" : 0,
+                "best build" : "dark seal",
+                "tips" : "stop playing blind pick"
+            },
+            "tahm kench" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "teemo" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "trundle" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "tryndamere" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "urgot" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "vayne" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "viego" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "volibear" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "wukong" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "yasuo" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "yone" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "yorick" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            },
+            "zac" : {
+                "difficulty" : 0,
+                "best build" : "",
+                "tips" : ""
+            }
+            
+        }
+    }
+]
