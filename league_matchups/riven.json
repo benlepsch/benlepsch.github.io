@@ -1,0 +1,190 @@
+[
+    {
+        "builds" : {
+            
+        },
+        "matchups" : {
+            "aatrox" : {
+                "difficulty" : 2,
+                "tips" : "try to do 2 minute bramble vest strat and proxy often"
+            },
+            "akali" : {
+                "difficulty" : 3,
+                "tips" : "akalis ridiculously weak pre 6, you win always unless she has w"
+            },
+            "camille" : {
+                "difficulty" : 4,
+                "tips" : "hard lane and side lane vs camille, if you die vs her after she used E and W you can kill"
+            },
+            "darius" : {
+                "difficulty" : 4,
+                "tips" : "very hard lane but you outscale if you hit ult, if you get hooked in do fast q > e > auto and run with phase rush"
+            },
+            "fiora" : {
+                "difficulty" : 3,
+                "tips" : "stick to a wall when she ults, try to charge Q from bushes and stop ult before you knockup so she can't parry"
+            },
+            "gangplank" : {
+                "difficulty" : 2,
+                "tips" : "lane is manageable, use W to block q/barrel poke, e minion > ult post six should be free kill. tank build doesn't get one shot by him either"
+            },
+            "gnar" : {
+                "difficulty" : 3,
+                "tips" : "mega gnar is very annoying with stuns, but mini gnar is punishable in lane becuase his jump is on a 20 second ish cooldown"
+            },
+            "gragas" : {
+                "difficulty" : 0,
+                "tips" : "never played this matchup lmk how it goes"
+            },
+            "gwen" : {
+                "difficulty" : 5,
+                "tips" : "impossible champion 200 years design"
+            },
+            "heimerdonger" : {
+                "difficulty" : 0,
+                "tips" : "never played this matchup either"
+            },
+            "illaoi" : {
+                "difficulty" : 5,
+                "tips" : "fuck illaoi"
+            },
+            "irelia" : {
+                "difficulty" : 5,
+                "tips" : "impossible lane fuck irelia"
+            },
+            "jax" : {
+                "difficulty" : 4,
+                "tips" : "lane isnt that terrible, try to proxy/steal jg as much as possible, then avoid him after lane"
+            },
+            "jayce" : {
+                "difficulty" : 1,
+                "tips" : "if he jumps on you in melee while you're charging q, release while he's in animation to cancel -- e minion > r post 6 is kill"
+            },
+            "kayle" : {
+                "difficulty" : 2,
+                "tips" : "not much to say kayle is pretty free, her ult cd is 20 seconds longer than yours level 1 so if you use ults at the same time she should be dead next time yours is off cooldown"
+            },
+            "kennen" : {
+                "difficulty" : 0,
+                "tips" : "never played vs kennen"
+            },
+            "kled" : {
+                "difficulty" : 3,
+                "tips" : "kled isnt an easy lane, be careful taking bad trades because he can dive you very easily. Try to bush cheese him with Q when he's dismounted so he can't get the remount."
+            },
+            "malphite" : {
+                "difficulty" : 2,
+                "tips" : "lane isnt hard plus he will probably try to teamfight mid-late so you can push side lanes"
+            },
+            "mordekaiser" : {
+                "difficulty" : 4,
+                "tips" : "try to die often and kill him in passive because you don't win while you're alive"
+            },
+            "mundo" : {
+                "difficulty" : 1,
+                "tips" : "his passive is annoying, try to step on the canister before he does"
+            },
+            "nasus" : {
+                "difficulty" : 2,
+                "tips" : ""
+            },
+            "ornn" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "poppy" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "quinn" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "renekton" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "rengar" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "riven" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "rumble" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "sett" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "shen" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "singed" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "sion" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "tahm kench" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "teemo" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "trundle" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "tryndamere" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "urgot" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "vayne" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "viego" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "volibear" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "wukong" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "yasuo" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "yone" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "yorick" : {
+                "difficulty" : 0,
+                "tips" : ""
+            },
+            "zac" : {
+                "difficulty" : 0,
+                "tips" : ""
+            }
+            
+        }
+    }
+]

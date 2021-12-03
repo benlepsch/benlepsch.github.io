@@ -1,3 +1,27 @@
+.d1 {
+    background-color: #1eff00;
+}
+
+.d2 { 
+    background-color: #00bfff;
+}
+
+.d3 {
+    background-color: #c8ff00;
+}
+
+.d4 {
+    background-color: #ffaa00;
+}
+
+.d5 {
+    background-color: #ff0000;
+}
+
+.d0 {
+    background-color: #c800ff;
+}
+
 /* Dropdown Button */
 .dropbtn {
     background-color: #04AA6D;

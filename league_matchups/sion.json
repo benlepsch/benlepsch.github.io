@@ -87,46 +87,46 @@
             },
             "jax" : {
                 "difficulty" : 4,
-                "best build" : "",
-                "tips" : ""
+                "best build" : "lethality",
+                "tips" : "lane isnt that terrible, try to proxy/steal jg as much as possible, then avoid him after lane"
             },
             "jayce" : {
-                "difficulty" : 0,
-                "best build" : "",
-                "tips" : ""
+                "difficulty" : 1,
+                "best build" : "either",
+                "tips" : "if he jumps on you in melee while you're charging q, release while he's in animation to cancel -- e minion > r post 6 is kill"
             },
             "kayle" : {
-                "difficulty" : 0,
-                "best build" : "",
-                "tips" : ""
+                "difficulty" : 2,
+                "best build" : "either",
+                "tips" : "not much to say kayle is pretty free, her ult cd is 20 seconds longer than yours level 1 so if you use ults at the same time she should be dead next time yours is off cooldown"
             },
             "kennen" : {
                 "difficulty" : 0,
-                "best build" : "",
-                "tips" : ""
+                "best build" : "either",
+                "tips" : "never played vs kennen"
             },
             "kled" : {
-                "difficulty" : 0,
-                "best build" : "",
-                "tips" : ""
+                "difficulty" : 3,
+                "best build" : "either",
+                "tips" : "kled isnt an easy lane, be careful taking bad trades because he can dive you very easily. Try to bush cheese him with Q when he's dismounted so he can't get the remount."
             },
             "malphite" : {
-                "difficulty" : 0,
-                "best build" : "",
-                "tips" : ""
+                "difficulty" : 2,
+                "best build" : "tank",
+                "tips" : "lane isnt hard plus he will probably try to teamfight mid-late so you can push side lanes"
             },
             "mordekaiser" : {
-                "difficulty" : 0,
-                "best build" : "",
-                "tips" : ""
+                "difficulty" : 4,
+                "best build" : "lethality",
+                "tips" : "try to die often and kill him in passive because you don't win while you're alive"
             },
             "mundo" : {
-                "difficulty" : 0,
-                "best build" : "",
-                "tips" : ""
+                "difficulty" : 1,
+                "best build" : "either",
+                "tips" : "his passive is annoying, try to step on the canister before he does"
             },
             "nasus" : {
-                "difficulty" : 0,
+                "difficulty" : 2,
                 "best build" : "",
                 "tips" : ""
             },
