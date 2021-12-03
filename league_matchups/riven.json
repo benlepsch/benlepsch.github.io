@@ -6,83 +6,83 @@
         "matchups" : {
             "aatrox" : {
                 "difficulty" : 2,
-                "tips" : "try to do 2 minute bramble vest strat and proxy often"
+                "tips" : "use your dashes, dont get hit by his 2nd or 3rd q"
             },
             "akali" : {
-                "difficulty" : 3,
-                "tips" : "akalis ridiculously weak pre 6, you win always unless she has w"
+                "difficulty" : 1,
+                "tips" : "akali is very weak early, all in every chance you get"
             },
             "camille" : {
-                "difficulty" : 4,
-                "tips" : "hard lane and side lane vs camille, if you die vs her after she used E and W you can kill"
+                "difficulty" : 3,
+                "tips" : "when camille w's, dash in with q>w for a short trade and e out before you get cho ulted"
             },
             "darius" : {
-                "difficulty" : 4,
-                "tips" : "very hard lane but you outscale if you hit ult, if you get hooked in do fast q > e > auto and run with phase rush"
+                "difficulty" : 3,
+                "tips" : "take ignite, stack Q and all in level 1. He can cancel your 3rd q with his E if he times it right"
             },
             "fiora" : {
                 "difficulty" : 3,
-                "tips" : "stick to a wall when she ults, try to charge Q from bushes and stop ult before you knockup so she can't parry"
+                "tips" : "don't get hit by her parry"
             },
             "gangplank" : {
-                "difficulty" : 2,
-                "tips" : "lane is manageable, use W to block q/barrel poke, e minion > ult post six should be free kill. tank build doesn't get one shot by him either"
+                "difficulty" : 4,
+                "tips" : "annoying lane but you outscale. if he oversteps, E->W in and auto his barrel, then Q combo him"
             },
             "gnar" : {
-                "difficulty" : 3,
-                "tips" : "mega gnar is very annoying with stuns, but mini gnar is punishable in lane becuase his jump is on a 20 second ish cooldown"
+                "difficulty" : 2,
+                "tips" : "mini gnar is very squishy and his jump is on a 20 second ish cooldown, bait his jump and then all in with Q extension"
             },
             "gragas" : {
-                "difficulty" : 0,
-                "tips" : "never played this matchup lmk how it goes"
+                "difficulty" : 2,
+                "tips" : "I haven't played against many gragases, just dodge out of his Q with your E and try to dodge his R with your dashes"
             },
             "gwen" : {
-                "difficulty" : 5,
-                "tips" : "impossible champion 200 years design"
+                "difficulty" : 3,
+                "tips" : "BUY GRIEVOUS, save a dash to dodge her Q center when she starts snipping you"
             },
             "heimerdonger" : {
-                "difficulty" : 0,
-                "tips" : "never played this matchup either"
+                "difficulty" : 2,
+                "tips" : "get to lane early and wait in a bush Q extending, DONT let him set up his turrets aggressively and it's free."
             },
             "illaoi" : {
-                "difficulty" : 5,
-                "tips" : "fuck illaoi"
+                "difficulty" : 4,
+                "tips" : "dodge the E or dodge the game, should be an easy matchup in theory but I have some kind of mental block against illaoi and always manage to int this lane"
             },
             "irelia" : {
-                "difficulty" : 5,
-                "tips" : "impossible lane fuck irelia"
+                "difficulty" : 2,
+                "tips" : "you win early pretty easy if she's at 0 stacks, just dodge her E. past 6, dont engage with a full wave of your minions for her to heal on and dont blow your entire combo into her W."
             },
             "jax" : {
-                "difficulty" : 4,
-                "tips" : "lane isnt that terrible, try to proxy/steal jg as much as possible, then avoid him after lane"
+                "difficulty" : 3,
+                "tips" : "EW out of his stun when he first starts his E, once he gets 6 his 3rd auto + w poke really hurts so try to all in or dont trade at all."
             },
             "jayce" : {
-                "difficulty" : 1,
-                "tips" : "if he jumps on you in melee while you're charging q, release while he's in animation to cancel -- e minion > r post 6 is kill"
+                "difficulty" : 3,
+                "tips" : ""
             },
             "kayle" : {
                 "difficulty" : 2,
-                "tips" : "not much to say kayle is pretty free, her ult cd is 20 seconds longer than yours level 1 so if you use ults at the same time she should be dead next time yours is off cooldown"
+                "tips" : ""
             },
             "kennen" : {
                 "difficulty" : 0,
-                "tips" : "never played vs kennen"
+                "tips" : ""
             },
             "kled" : {
                 "difficulty" : 3,
-                "tips" : "kled isnt an easy lane, be careful taking bad trades because he can dive you very easily. Try to bush cheese him with Q when he's dismounted so he can't get the remount."
+                "tips" : ""
             },
             "malphite" : {
                 "difficulty" : 2,
-                "tips" : "lane isnt hard plus he will probably try to teamfight mid-late so you can push side lanes"
+                "tips" : ""
             },
             "mordekaiser" : {
                 "difficulty" : 4,
-                "tips" : "try to die often and kill him in passive because you don't win while you're alive"
+                "tips" : ""
             },
             "mundo" : {
                 "difficulty" : 1,
-                "tips" : "his passive is annoying, try to step on the canister before he does"
+                "tips" : ""
             },
             "nasus" : {
                 "difficulty" : 2,

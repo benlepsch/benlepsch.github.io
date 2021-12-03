@@ -1,4 +1,4 @@
-let champ = 'chogath';
+let champ = 'riven';
 
 function chogath() {
     champ = 'chogath';
