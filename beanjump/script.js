@@ -503,6 +503,7 @@ function changeCarrots() {
 
 let widden = false;
 function wideIt() {
+	let p = document.getElementById('player');
 	if (widden) {
 		p.style.width = '70px';
 	} else {
