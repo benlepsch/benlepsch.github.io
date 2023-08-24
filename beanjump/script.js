@@ -501,6 +501,17 @@ function changeCarrots() {
 	alert('carrots only has been ' + ((carrots_only) ? 'enabled' : 'disabled'));
 }
 
+let widden = false;
+function wideIt() {
+	if (widden) {
+		p.style.width = '70px';
+	} else {
+		p.style.width = '70%';
+	}
+	alert('wide mode is ' + (widden ? 'off' : 'on'));
+	widden = !widden;
+}
+
 // determine where to draw the ground
 let base_y = Math.floor($(window).height()*2 /3);
 let recent_score = 0;
