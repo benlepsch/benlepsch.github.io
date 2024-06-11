@@ -1,0 +1,13 @@
+{
+    "otter_cliffs": [
+        {
+            "name": "razorback",
+            "grade": "5.5",
+            "site": "top",
+            "fortym": "yes",
+            "pic": ["images/otter_cliffs/razorback_pic.jpg"],
+            "anchor": ["images/otter_cliffs/razorback_anchor.png"],
+            "beta": "lower to ledge above the bottom, easy climbing to a big step out right"
+        }
+    ]
+}
