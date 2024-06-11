@@ -9,5 +9,32 @@
             "anchor": ["images/otter_cliffs/razorback_anchor.png"],
             "beta": "lower to ledge above the bottom, easy climbing to a big step out right"
         }
+    ],
+    "cooksey_drive": [
+        {
+            "name": "Boulder Anchor",
+            "grade": "5.3/4",
+            "site": "top",
+            "fortym": "yes",
+            "pic": ["images/cooksey_drive/boulder_private.png"],
+            "anchor": [
+                "images/cooksey_drive/boulder_anchor_0.png",
+                "images/cooksey_drive/boulder_anchor_1.png"
+            ],
+            "beta": "Hardest move at the start, work feet out to the right and grab two low crimps to help stand up. Bump left foot high and reach for the jug straight ahead, walk up the rest of the route."
+        },
+        {
+            "name": "No Trespassing",
+            "grade": "5.6",
+            "site": "top",
+            "fortym": "yes",
+            "pic": ["images/cooksey_drive/boulder_private.png"],
+            "anchor": [
+                "images/cooksey_drive/private_anchor_0.png",
+                "images/cooksey_drive/private_anchor_1.png"
+            ],
+            "beta": "Easy start. At first big ledge, can go left up the face on high feet (harder) or go right onto the arete. Right version has reachy move for a right handhold, then huge right foot to stand on. For the final roof, get a high left and higher right handhold, smear feet and bump left hand over the edge to jugs."
+        
+        }
     ]
 }
