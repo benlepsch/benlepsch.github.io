@@ -1,13 +1,40 @@
 {
     "otter_cliffs": [
         {
-            "name": "razorback",
+            "name": "In the Groove",
             "grade": "5.5",
             "site": "top",
             "fortym": "yes",
-            "pic": ["images/otter_cliffs/razorback_pic.jpg"],
+            "pic": ["images/otter_cliffs/in_the_groove.png"],
+            "anchor": ["images/otter_cliffs/in_the_groove_anchor.png"],
+            "beta": "Pull the first ledge, then bear left on good hand and footholds. Step right onto the flake, switch feet and find a high right foot outside the flake then jug haul to the top."
+        },
+        {
+            "name": "Wonder Corner",
+            "grade": "5.6",
+            "site": "top",
+            "fortym": "yes",
+            "pic": ["images/otter_cliffs/wonder_corner.png"],
+            "anchor": ["images/otter_cliffs/wonder_corner_anchor.png"],
+            "beta": "Follow corner system up the wall, either moving right onto the face at the crux or find a high right foot on the face and reach for a crimpy hold on the corner's arete."
+        },
+        {
+            "name": "Razorback",
+            "grade": "5.5",
+            "site": "top",
+            "fortym": "yes",
+            "pic": ["images/otter_cliffs/razorback.png"],
             "anchor": ["images/otter_cliffs/razorback_anchor.png"],
-            "beta": "lower to ledge above the bottom, easy climbing to a big step out right"
+            "beta": "Lower to ledge above the very bottom, easy climbing to a big step out right on a small chip. Stand up to a crimpy hold with the right hand and smear feet on the slab until you can reach the jugs."
+        },
+        {
+            "name": "Overhanging Corner",
+            "grade": "5.7",
+            "site": "top",
+            "fortym": "yes",
+            "pic": ["images/otter_cliffs/overhanging_corner.png"],
+            "anchor": ["images/otter_cliffs/overhanging_corner_anchor.png"],
+            "beta": "Easy climbing to a good ledge, either head left on jugs or straight up the corner on hidden feet. Get feet in the crack for the crux, jam or pull on edges in the crack then find a right foot on the face and stem to the top."
         }
     ],
     "cooksey_drive": [
