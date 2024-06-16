@@ -72,5 +72,48 @@
             "beta": "Easy start. At first big ledge, can go left up the face on high feet (harder) or go right onto the arete. Right version has reachy move for a right handhold, then huge right foot to stand on. For the final roof, get a high left and higher right handhold, smear feet and bump left hand over the edge to jugs."
         
         }
+    ],
+    "canyon_cliffs": [
+        {
+            "name": "Baby Steps Left",
+            "grade": "5.2",
+            "site": "base",
+            "fortym": "yes",
+            "pic": [],
+            "pic_txt": "Start on the diagonal crack of Baby Steps, follow the crack to the top.",
+            "anchor": [],
+            "anchor_txt": "Same tree anchor as Night Soil, use a directional (either a 0.5 in the hollow sounding horizontal or a 0.4 in the vertical crack to the looker's left of the route)",
+            "beta": "Just look for the holds man"
+        },
+        {
+            "name": "Baby Steps",
+            "grade": "5.4",
+            "site": "base",
+            "fortym": "yes",
+            "pic": ["images/canyon_cliffs/unnamed.png"],
+            "anchor": [],
+            "anchor_txt": "Same tree anchor as Night Soil, use a directional #1 in the non hollow sounding horizontal close to the edge",
+            "beta": "Look for the holds"
+        },
+        {
+            "name": "Night Soil",
+            "grade": "5.5",
+            "site": "base",
+            "fortym": "yes",
+            "pic": ["images/canyon_cliffs/night_soil.png"],
+            "anchor": ["images/canyon_cliffs/night_soil_anchor.png"],
+            "beta": "Handholds at the start aren't great, walk feet up + reach jugs about halfway up"
+        },
+        {
+            "name": "Easier Corner",
+            "grade": "5.3",
+            "site": "base",
+            "fortym": "yes",
+            "pic": [],
+            "pic_txt": "Corner/crack to the right of Night Soil",
+            "anchor": [],
+            "anchor_txt": "Same tree anchor as Night Soil, directional 0.75 at the top.",
+            "beta": ""
+        }
     ]
 }
