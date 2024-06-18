@@ -70,7 +70,71 @@
                 "images/cooksey_drive/private_anchor_1.png"
             ],
             "beta": "Easy start. At first big ledge, can go left up the face on high feet (harder) or go right onto the arete. Right version has reachy move for a right handhold, then huge right foot to stand on. For the final roof, get a high left and higher right handhold, smear feet and bump left hand over the edge to jugs."
-        
+        },
+        {
+            "name": "Cooksey Arete",
+            "grade": "5.5",
+            "site": "top",
+            "fortym": "yes",
+            "pic": ["images/cooksey_drive/arete.png"],
+            "anchor": ["images/cooksey_drive/arete_anchor.png"],
+            "beta": "Honestly have no memory of this climb but I don't think it was very hard."
+        },
+        {
+            "name": "Karate Chop",
+            "grade": "5.7",
+            "site": "top",
+            "fortym": "yes",
+            "pic": [],
+            "pic_txt": "to the right of the arete",
+            "anchor": [],
+            "anchor_txt": "Same placements as for arete, either get a huge quad or just re equalize",
+            "beta": "High feet and decent but powerful hands the whole way, karate chop move midway up with left hand into the undercling/jam."
+        }
+    ],
+    "ocean_drive": [
+        {
+            "name": "Calvin's Corner",
+            "grade": "5.7+",
+            "site": "top",
+            "fortym": "yes",
+            "pic": [],
+            "pic_txt": "",
+            "anchor": [],
+            "anchor_txt": "quad and hand sized pieces in the giant boulder/ledge on top of the cliff",
+            "beta": "Start is usually wet and slimy, but still goes with one 10a-ish move to a good ledge and stance. 5.7+ climbing the rest of the route on good laybacks and stemming positions."
+        },
+        {
+            "name": "Weird anchor",
+            "grade": "5.7",
+            "site": "top",
+            "fortym": "yes",
+            "pic": [],
+            "pic_txt": "",
+            "anchor": [],
+            "anchor_txt": "0.75 and 0.5 in the crack parallel to the edge of the cliff, tether yourself and step down to belay ledge. Other leg of the anchor is a bomber #1 in the eye level crack on the climber's right.",
+            "beta": "not a clue"
+        },
+        {
+            "name": "Center Corner",
+            "grade": "5.5",
+            "site": "top",
+            "fortym": "yes",
+            "pic": [],
+            "pic_txt": "You know this one",
+            "anchor": ["images/ocean_drive/central_corner_anchor.png"],
+            "beta": "Easy climbing + stemming"
+        },
+        {
+            "name": "Chimneyish",
+            "grade": "5.6",
+            "site": "top",
+            "fortym": "yes",
+            "pic": ["images/ocean_drive/chimneyish.png"],
+            "pic_txt": "",
+            "anchor": [],
+            "anchor_txt": "Thin hands to fists in the shallow crack back a ways from the edge, quad anchor works well here",
+            "beta": "Easy climbing + stemming"
         }
     ],
     "canyon_cliffs": [
@@ -82,7 +146,7 @@
             "pic": [],
             "pic_txt": "Start on the diagonal crack of Baby Steps, follow the crack to the top.",
             "anchor": [],
-            "anchor_txt": "Same tree anchor as Night Soil, use a directional (either a 0.5 in the hollow sounding horizontal or a 0.4 in the vertical crack to the looker's left of the route)",
+            "anchor_txt": "Trees",
             "beta": "Just look for the holds man"
         },
         {
@@ -92,7 +156,7 @@
             "fortym": "yes",
             "pic": ["images/canyon_cliffs/unnamed.png"],
             "anchor": [],
-            "anchor_txt": "Same tree anchor as Night Soil, use a directional #1 in the non hollow sounding horizontal close to the edge",
+            "anchor_txt": "Trees",
             "beta": "Look for the holds"
         },
         {
@@ -101,7 +165,8 @@
             "site": "base",
             "fortym": "yes",
             "pic": ["images/canyon_cliffs/night_soil.png"],
-            "anchor": ["images/canyon_cliffs/night_soil_anchor.png"],
+            "anchor": [],
+            "anchor_txt": "trees",
             "beta": "Handholds at the start aren't great, walk feet up + reach jugs about halfway up"
         },
         {
@@ -112,7 +177,7 @@
             "pic": [],
             "pic_txt": "Corner/crack to the right of Night Soil",
             "anchor": [],
-            "anchor_txt": "Same tree anchor as Night Soil, directional 0.75 at the top.",
+            "anchor_txt": "trees",
             "beta": ""
         }
     ]
