@@ -183,6 +183,32 @@
     ],
     "south_wall": [
         {
+            "name": "Lower Wall",
+            "isArea": true
+        },
+        {
+            "name": "Retlaw",
+            "grade": "5.7",
+            "site": "either",
+            "fortym": "no",
+            "pic": [],
+            "pic_txt": "",
+            "anchor": [],
+            "anchor_txt": "Bolted anchor",
+            "beta": ""
+        },
+        {
+            "name": "Balance Queen",
+            "grade": "5.7",
+            "site": "either",
+            "fortym": "no",
+            "pic": [],
+            "pic_txt": "Small pieces from the ground, then two bolts above a horizontal bulge lead to a high 0.5 placement and a short finger crack",
+            "anchor": [],
+            "anchor_txt": "Bolted anchor",
+            "beta": "jugs"
+        },
+        {
             "name": "Main Wall",
             "isArea": true
         },
