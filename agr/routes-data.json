@@ -183,6 +183,21 @@
     ],
     "south_wall": [
         {
+            "name": "Main Wall",
+            "isArea": true
+        },
+        {
+            "name": "Old Town",
+            "grade": "5.7",
+            "site": "either",
+            "fortym": "no",
+            "pic": [],
+            "pic_txt": "To the right of Connecticut Cracks",
+            "anchor": [],
+            "anchor_txt": "Bolted anchor w rap rings",
+            "beta": "Crux is getting off the ground, stemmy stances lead to glorious laybacking in a finger crack up to a ledge. Another short layback section follows before you can grab the arete and face holds appear."
+        },
+        {
             "name": "Central Slabs",
             "isArea": true
         },
