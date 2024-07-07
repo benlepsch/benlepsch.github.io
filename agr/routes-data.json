@@ -126,6 +126,88 @@
             "beta": "idk i haven't done it"
         }
     ],
+    "south_otter": [
+        {
+            "name": "Sea Cliffs",
+            "isArea": true
+        },
+        {
+            "name": "Eagle's Landing",
+            "grade": "5.3",
+            "pic": [],
+            "pic_txt": "who knows",
+            "anchor": [],
+            "anchor_txt": "not sure ive set this one up before",
+            "beta": "its like 5.1 just walk up it"
+        },
+        {
+            "name": "Splashtown",
+            "grade": "5.5",
+            "pic": [],
+            "pic_txt": "A shaped crack straight back from museum wall",
+            "anchor": [],
+            "anchor_txt": "1 + .5 + .4 quad",
+            "beta": "Lower to a large ledge or smaller triangle shaped ledge, climb up and to climber's right through a crack onto a larger ledge. Either walk further right to a crack or finish up the face."
+        },
+        {
+            "name": "Clamshell",
+            "grade": "5.6",
+            "pic": [],
+            "pic_txt": "Top is marked by the large clamshell shaped boulder",
+            "anchor": [],
+            "anchor_txt": "Pinch on one side of the boulder and a 0.3+0.4 in a crack in the ground behind it, rope pro on the sharp edge of the boulder",
+            "beta": "Lower to the driest ledge on a given day, positive edges and vertical climbing"
+        },
+        {
+            "name": "Base managed stuff",
+            "isArea": true
+        },
+        {
+            "name": "Museum wall",
+            "grade": "5.7",
+            "pic": [],
+            "pic_txt": "To the right of the pillar",
+            "anchor": [],
+            "anchor_txt": "Crack up top for cams + pinch on the same boulder used for the gully anchor",
+            "beta": "Start on a step in a large crack, staying in the center of the face is easiest around 5.6"
+        },
+        {
+            "name": "Gully Slab",
+            "grade": "5.5",
+            "pic": [],
+            "pic_txt": "The face to the climber's left of the Gully",
+            "anchor": [],
+            "anchor_txt": "M anchor, 0.5 in the pocket on the far side and a #2+#1 in the tiny feature in the center.",
+            "beta": "High feet to start, move up over the first ledge + follow the feet to the top"
+        },
+        {
+            "name": "Gully",
+            "grade": "5.2",
+            "pic": [],
+            "pic_txt": "The gully",
+            "anchor": [],
+            "anchor_txt": "Other side of M anchor for the face, use the pinch boulder",
+            "beta": "Easy climbing with smeary feet in spots"
+        },
+        {
+            "name": "Triple Stack",
+            "grade": "5.1",
+            "pic": [],
+            "pic_txt": "Midway up the walk over to the Gully anchor",
+            "anchor": [],
+            "anchor_txt": "Gear anchor, plenty of cracks up top to choose from",
+            "beta": "it's 5.1"
+        },
+        {
+            "name": "Scuderud Wall",
+            "grade": "5.5",
+            "pic": [],
+            "pic_txt": "The face you can rap in on",
+            "anchor": [],
+            "anchor_txt": "(BD) #2 + #1 + 0.3",
+            "beta": "Start mid face or left, traverse right to the ledge then back left and finish near the arete."
+        }
+    ],
     "cooksey_drive": [
         {
             "name": "Boulder Anchor",
