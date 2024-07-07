@@ -1,6 +1,19 @@
 {
     "otter_cliffs": [
         {
+            "name": "Main Wall",
+            "isArea": true
+        },
+        {
+            "name": "The Flake",
+            "grade": "5.9 / 5.7",
+            "pic": [],
+            "pic_txt": "To the left of in the groove",
+            "anchor": [],
+            "anchor_txt": "Eye bolt + 0.75",
+            "beta": "Straightforward climbing until the small roof at the top. Pull directly over the roof for 5.9 or veer left for 5.7"
+        },
+        {
             "name": "In the Groove",
             "grade": "5.5",
             "site": "top",
@@ -10,6 +23,15 @@
             "beta": "Pull the first ledge, then bear left on good hand and footholds. Step right onto the flake, switch feet and find a high right foot outside the flake then jug haul to the top."
         },
         {
+            "name": "Wonderwall",
+            "grade": "5.6/7",
+            "pic": [],
+            "pic_txt": "The face between In the Groove + Easy Corner",
+            "anchor": [],
+            "anchor_txt": "Eye bolts/gear anchor for skiier's right side",
+            "beta": "Choose your own adventure up the wall. Skiier's right is 5.7, left is 5.6"
+        },
+        {
             "name": "Wonder Corner",
             "grade": "5.6",
             "site": "top",
@@ -17,6 +39,15 @@
             "pic": ["images/otter_cliffs/wonder_corner.png"],
             "anchor": ["images/otter_cliffs/wonder_corner_anchor.png"],
             "beta": "Follow corner system up the wall, either moving right onto the face at the crux or find a high right foot on the face and reach for a crimpy hold on the corner's arete."
+        },
+        {
+            "name": "Yellow Wall",
+            "grade": "5.8",
+            "pic": [],
+            "pic_txt": "The spot on the wall where it turns yellow",
+            "anchor": [],
+            "anchor_txt": "1 2 3 in the good crack, quad anchor (i think) allows u to flip it over to guilloutine",
+            "beta": "Start and climb up the arete. Crux is at the second big ledge. Match hands on the sloper over the roof, move left to a crimp and bump to a jug. Walk left and follow the good holds up"
         },
         {
             "name": "Razorback",
@@ -38,12 +69,61 @@
         },
         {
             "name": "Overhanging Corner",
-            "grade": "5.7",
+            "grade": "5.6",
             "site": "top",
             "fortym": "yes",
             "pic": ["images/otter_cliffs/overhanging_corner.png"],
             "anchor": ["images/otter_cliffs/overhanging_corner_anchor.png"],
             "beta": "Easy climbing to a good ledge, either head left on jugs or straight up the corner on hidden feet. Get feet in the crack for the crux, jam or pull on edges in the crack then find a right foot on the face and stem to the top."
+        },
+        {
+            "name": "Rolling Swells",
+            "grade": "5.7",
+            "pic": [],
+            "pic_txt": "Boulder on top of overhanging corner points directly to the top of RS",
+            "anchor": [],
+            "anchor_txt": "Same placements as for OC",
+            "beta": "Somewhat reachy moves on good holds, crux is mantle-y move near the top"
+        },
+        {
+            "name": "State of Maine",
+            "grade": "5.7",
+            "pic": [],
+            "pic_txt": "Arete on the far (skiier's) right of the main cliff",
+            "anchor": [],
+            "anchor_txt": "0.5-0.75 pieces in the splitter crack & solid #1 above Staircase",
+            "beta": "Lower is tricky since there's not really a good ledge to land on. Climb up the arete to start, move to climber's right and finish up the face."
+        },
+        {
+            "name": "Out to Sea",
+            "grade": "5.4",
+            "pic": [],
+            "pic_txt": "Just to the skiier's left of the Escape Hatch",
+            "anchor": [],
+            "anchor_txt": "Bomber 0.3 and #7/8 nut for one leg, decent pinch for the other leg. Be super careful about the rope pro, rope goes over very sharp edges and climber moves around enough you'll have to adjust the pro.",
+            "beta": "Begin on the lowest non-wet ledge. Optional mantle up to the next ledge, then step to the climber's left around the arete and pull on good holds to reach the next ledge. Top out is likely the crux"
+        },
+        {
+            "name": "Plaque Wall",
+            "isArea": true
+        },
+        {
+            "name": "Summer Camp Corner",
+            "grade": "5.5",
+            "pic": [],
+            "pic_txt": "Corner on the climber's right of plaque wall",
+            "anchor": [],
+            "anchor_txt": "0.3-0.75 cams in the cracks up top, #1 directional after the first ledge",
+            "beta": "Start far out right and pull the first ledge, somewhat weird climbing with a potential hand jam overhead leads to the ledge with the directional. Easy climbing up the corner to finish"
+        },
+        {
+            "name": "Shitbird",
+            "grade": "5.4",
+            "pic": [],
+            "pic_txt": "Around to the climber's right from SCC",
+            "anchor": [],
+            "anchor_txt": "finger sized cams in the crack further up from the SCC anchor",
+            "beta": "idk i haven't done it"
         }
     ],
     "cooksey_drive": [
@@ -135,6 +215,15 @@
             "anchor": [],
             "anchor_txt": "Thin hands to fists in the shallow crack back a ways from the edge, quad anchor works well here",
             "beta": "Easy climbing + stemming"
+        },
+        {
+            "name": "Sea slabs",
+            "grade": "5.8/5.5",
+            "pic": [],
+            "pic_txt": "Base managed routes to the climber's right",
+            "anchor": [],
+            "anchor_txt": "M setup, mostly hand sized pieces",
+            "beta": "CLeft: Hard balancey move in the middle, find right foot and lean to reach high left hand. CRight: Right foot high on chip, right hand behind block, left hand mantling and left foot smearing/ jump from the ground and flag. 5.1 climbing after the initial ledge."
         }
     ],
     "canyon_cliffs": [
