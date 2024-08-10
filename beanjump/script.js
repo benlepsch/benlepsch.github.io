@@ -199,6 +199,9 @@ class VegetableManager {
 	kill(id) {
 		this.veggies[parseInt(id)].alive = false;
 		this.veggies[parseInt(id)].rep.classList.add('flipped');
+		if (this.veggies[parseInt(id)].rep.classList.contains('mirror')) {
+			this.veggies[parseInt(id)].rep.classList.remove('mirror');
+		}
 		this.veggies[parseInt(id)].rep.style.width = this.veggies[parseInt(id)].rep.clientWidth + 'px';
 		this.veggies[parseInt(id)].rep.style.height = this.veggies[parseInt(id)].rep.clientHeight * .8 + 'px';
 	}
