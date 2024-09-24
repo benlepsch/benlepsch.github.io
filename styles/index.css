@@ -1,0 +1,41 @@
+/* general rules */
+
+body {
+    background-color: #f0fba19d;
+}
+
+div, p {
+    font-family: Microsoft Tai Le, Candara, sans-serif;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 150%;
+    padding: 2%;
+}
+
+h3 {
+    font-size: 120%;
+    padding: 1%;
+}
+
+header {
+    padding: 5%;
+}
+
+footer {
+    padding: 5%;
+}
+
+/* custom classes */
+
+.center_text {
+    width: 100%;
+    display:inline-block;
+    text-align: center;
+}
+
+.center_element {
+    margin-left: auto;
+    margin-right: auto;
+}
