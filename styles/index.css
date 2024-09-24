@@ -4,6 +4,10 @@ body {
     background-color: #f0fba19d;
 }
 
+code {
+    background-color: #eefa94;
+}
+
 div, p {
     font-family: Microsoft Tai Le, Candara, sans-serif;
     line-height: 1.5;
@@ -21,6 +25,7 @@ h3 {
 
 header {
     padding: 5%;
+    margin: auto;
 }
 
 footer {
@@ -38,4 +43,17 @@ footer {
 .center_element {
     margin-left: auto;
     margin-right: auto;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+
+.flexy {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-basis: 300px;
 }
