@@ -13,6 +13,10 @@ div, p {
     line-height: 1.5;
 }
 
+h2, h3 {
+    font-weight: bold;
+}
+
 h2 {
     font-size: 150%;
     padding: 2%;
@@ -54,6 +58,13 @@ footer {
 .flexy {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     flex-basis: 300px;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-col {
+    flex-direction: column;
 }
