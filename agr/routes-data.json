@@ -123,7 +123,7 @@
             "pic_txt": "Around to the climber's right from SCC",
             "anchor": [],
             "anchor_txt": "finger sized cams in the crack further up from the SCC anchor",
-            "beta": "idk i haven't done it"
+            "beta": "Walk up"
         }
     ],
     "south_otter": [
@@ -137,14 +137,14 @@
             "pic": [],
             "pic_txt": "who knows",
             "anchor": [],
-            "anchor_txt": "not sure ive set this one up before",
-            "beta": "its like 5.1 just walk up it"
+            "anchor_txt": "Cams in the cracks back 10-15 feet from the edge",
+            "beta": "its like 5.1 just walk up it (alternate variation around the corner to the climber's right is more difficult)"
         },
         {
             "name": "Splashtown",
             "grade": "5.5",
             "pic": [],
-            "pic_txt": "A shaped crack straight back from museum wall",
+            "pic_txt": "\"A\" shaped crack straight back from museum wall",
             "anchor": [],
             "anchor_txt": "1 + .5 + .4 quad",
             "beta": "Lower to a large ledge or smaller triangle shaped ledge, climb up and to climber's right through a crack onto a larger ledge. Either walk further right to a crack or finish up the face."
@@ -306,50 +306,6 @@
             "anchor": [],
             "anchor_txt": "M setup, mostly hand sized pieces",
             "beta": "CLeft: Hard balancey move in the middle, find right foot and lean to reach high left hand. CRight: Right foot high on chip, right hand behind block, left hand mantling and left foot smearing/ jump from the ground and flag. 5.1 climbing after the initial ledge."
-        }
-    ],
-    "canyon_cliffs": [
-        {
-            "name": "Baby Steps Left",
-            "grade": "5.2",
-            "site": "base",
-            "fortym": "yes",
-            "pic": [],
-            "pic_txt": "Start on the diagonal crack of Baby Steps, follow the crack to the top.",
-            "anchor": [],
-            "anchor_txt": "Trees",
-            "beta": "Just look for the holds man"
-        },
-        {
-            "name": "Baby Steps",
-            "grade": "5.4",
-            "site": "base",
-            "fortym": "yes",
-            "pic": ["images/canyon_cliffs/unnamed.png"],
-            "anchor": [],
-            "anchor_txt": "Trees",
-            "beta": "Look for the holds"
-        },
-        {
-            "name": "Night Soil",
-            "grade": "5.5",
-            "site": "base",
-            "fortym": "yes",
-            "pic": ["images/canyon_cliffs/night_soil.png"],
-            "anchor": [],
-            "anchor_txt": "trees",
-            "beta": "Handholds at the start aren't great, walk feet up + reach jugs about halfway up"
-        },
-        {
-            "name": "Easier Corner",
-            "grade": "5.3",
-            "site": "base",
-            "fortym": "yes",
-            "pic": [],
-            "pic_txt": "Corner/crack to the right of Night Soil",
-            "anchor": [],
-            "anchor_txt": "trees",
-            "beta": ""
         }
     ],
     "south_wall": [
