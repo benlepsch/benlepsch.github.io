@@ -2,7 +2,7 @@
 
 body {
     background-color: #f0fba19d;
-    cursor: url('images/normal.png'), auto;
+    cursor: url('/images/normal.png'), auto;
 }
 
 code {
