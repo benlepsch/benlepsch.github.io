@@ -2,6 +2,7 @@
 
 body {
     background-color: #f0fba19d;
+    cursor: url('images/normal.cur'), auto;
 }
 
 code {
