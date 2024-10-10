@@ -5,6 +5,10 @@ body {
     cursor: url('/images/normal.png'), auto;
 }
 
+a {
+    cursor: url('/images/link.png'), auto;
+}
+
 code {
     background-color: #eefa94;
 }
