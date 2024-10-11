@@ -41,13 +41,31 @@
             "beta": "Follow corner system up the wall, either moving right onto the face at the crux or find a high right foot on the face and reach for a crimpy hold on the corner's arete."
         },
         {
+            "name": "Guilloutine",
+            "grade": "5.10a",
+            "pic": [],
+            "pic_txt": "Around the corner to the skiier's left of Yellow Wall.",
+            "anchor": [],
+            "anchor_txt": "Same anchor as Yellow Wall, re-equalize if necessary",
+            "beta": "Easier start leads to a thin and insecure crux. Get feet up high, reach for a sidepull, then head up to a juggy traverse out left."
+        },
+        {
             "name": "Yellow Wall",
             "grade": "5.8",
             "pic": [],
             "pic_txt": "The spot on the wall where it turns yellow",
             "anchor": [],
-            "anchor_txt": "1 2 3 in the good crack, quad anchor (i think) allows u to flip it over to guilloutine",
+            "anchor_txt": "1 2 3 in the good crack, quad anchor allows u to flip it over to Guilloutine or Inner Sanctum",
             "beta": "Start and climb up the arete. Crux is at the second big ledge. Match hands on the sloper over the roof, move left to a crimp and bump to a jug. Walk left and follow the good holds up"
+        },
+        {
+            "name": "Inner Sanctum",
+            "grade": "5.10b",
+            "pic": [],
+            "pic_txt": "Directly to the skiier's right of Yellow Wall.",
+            "anchor": [],
+            "anchor_txt": "Yellow Wall anchor",
+            "beta": "Moderate throughout except for a cruxy bit right after the ledge. Get super high feet and pull hard on pockety crimps for a move or two, then it's easier terrain to the top."
         },
         {
             "name": "Razorback",
@@ -314,12 +332,12 @@
             "isArea": true
         },
         {
-            "name": "Retlaw",
+            "name": "Retlaw / Philadelphia Story",
             "grade": "5.7",
             "site": "either",
             "fortym": "no",
             "pic": [],
-            "pic_txt": "",
+            "pic_txt": "I can never remember which is Philadelphia Story and which is Retlaw. The climbs are about 10 feet apart, both are moderate throughout with ample protection and a shared bolted anchor.",
             "anchor": [],
             "anchor_txt": "Bolted anchor",
             "beta": ""
@@ -364,6 +382,15 @@
             "anchor": [],
             "anchor_txt": "Gear anchor on the ledge to the left of the rap rings, #1-3 in the bigger crack and can back it up with a 0.4-0.5 above it.  Directional BD 0.75 / WC 0.5 above the start.",
             "beta": "Pull the mini roof and step up, make the lunge left after a bit to stay near the arete. Eventually step all the way left past From Russia and continue up the arete on slabby feet. "
+        },
+        {
+            "name": "Recollections of Pacifica",
+            "grade": "5.9",
+            "pic": [],
+            "pic_txt": "Starts at a splitter finger crack about 15' left of the beginning of Wafer Step.",
+            "anchor": [],
+            "anchor_txt": "bolted anchor, shared with wafer step",
+            "beta": "Climb the crack, move up through an easier section before a big move on smaller holds joins Wafer Step. A BD #2 micronut fits great in the thin seam after joining Wafer Step"
         },
         {
             "name": "Wafer Step",
