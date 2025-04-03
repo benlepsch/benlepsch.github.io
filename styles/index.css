@@ -62,6 +62,11 @@ header {
     flex-basis: 300px;
 }
 
+.no-basis {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .flex-row {
     flex-direction: row;
 }
