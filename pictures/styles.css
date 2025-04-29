@@ -1,3 +1,8 @@
+div {
+    display: flex;
+    flex-basis: row;
+}
+
 /* centered on page horizontal and vertical, a little smaller than page size */
 .main-viewer {
     display: flex;
