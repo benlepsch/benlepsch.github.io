@@ -1,5 +1,6 @@
 /* centered on page horizontal and vertical, a little smaller than page size */
-.main_viewer {
+.main-viewer {
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 90%;
