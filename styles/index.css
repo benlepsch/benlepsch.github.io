@@ -64,7 +64,11 @@ header {
 .flexy {
     display: flex;
     flex-wrap: wrap;
-    flex-basis: 300px;
+    flex-basis: 250px;
+}
+
+.wider {
+    flex-basis: 450px;
 }
 
 .no-basis {
