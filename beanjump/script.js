@@ -270,7 +270,7 @@ class Vegetable {
 			this.rep.style.left = parseInt(this.rep.style.left) + this.speed + 'px';
 
 			if (wavy) {
-				this.rep.style.top = this.start_ys[this.type] + (amplitude*Math.sin(wavelength*parseInt(this.rep.style.left))) + 'px';
+				this.rep.style.top = base_y + player.rep.clientHeight - this.start_ys[this.type] + (amplitude*Math.sin(wavelength*parseInt(this.rep.style.left))) + 'px';
 			}
 
 		} else {
