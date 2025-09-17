@@ -232,6 +232,8 @@ class Vegetable {
 		this.wavelength = parseInt(document.getElementById('wavelength_input').value);
 		this.offset = parseInt(document.getElementById('offset_input').value);
 
+		console.log('read values: ' + this.amplitude + '\t' + this.wavelength + '\t' + this.offset);
+
 	}
 
 	// create the image and blit onto screen
@@ -540,7 +542,7 @@ function waveMode() {
 	} else {
 		document.getElementById('wave_mods').style.display = 'none';
 	}
-	
+
 	alert('wave mode has been ' + (wavy ? 'enabled' : 'disabled'));
 }
 
