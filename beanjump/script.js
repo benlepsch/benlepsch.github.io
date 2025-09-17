@@ -222,6 +222,13 @@ class Vegetable {
 		this.velY = 0;
 		this.maxVelY = 28;
 		this.accelY = 1.5;
+		this.start_ys = {
+			'onion': 100,
+			'cabbage': 130,
+			'carrot': 300
+		};
+		this.amplitude = 1;
+		this.wavelength = 1;
 	}
 
 	// create the image and blit onto screen
@@ -241,14 +248,14 @@ class Vegetable {
 		}
 
 		// get the y right, this never needs to be changed
+		// UNLESS WE'RE IN WAVE MODE !!!!!!!!!
+		this.rep.style.top = base_y + player.rep.clientHeight - this.start_ys[this.type] + 'px';
+
 		if (this.type == 'onion') {
-			this.rep.style.top = base_y + player.rep.clientHeight - 100 + 'px';
 			this.score = 100;
 		} else if (this.type == 'cabbage') {
-			this.rep.style.top = base_y + player.rep.clientHeight - 130 + 'px';
 			this.score = 130;
 		} else if (this.type == 'carrot') {
-			this.rep.style.top = base_y + player.rep.clientHeight - 300 + 'px';
 			this.score = 170;
 		}
 
@@ -260,6 +267,11 @@ class Vegetable {
 	update(id) {
 		if (this.alive) {
 			this.rep.style.left = parseInt(this.rep.style.left) + this.speed + 'px';
+
+			if (wavy) {
+				this.rep.style.top = this.start_ys[this.type] + (this.amplitude*Math.sin(this.wavelength*parseInt(this.rep.style.left)));
+			}
+
 		} else {
 			this.rep.style.top = parseInt(this.rep.style.top) + this.velY + 'px';
 			this.velY = constrain(this.velY + this.accelY, 0, this.maxVelY);
@@ -514,6 +526,12 @@ function wideIt() {
 	}
 	alert('wide mode is ' + (widden ? 'off' : 'on'));
 	widden = !widden;
+}
+
+let wavy = false;
+function waveMode() {
+	wavy = !wavy;
+	alert('wave mode has been ' + (wavy ? 'enabled' : 'disabled'));
 }
 
 // determine where to draw the ground
