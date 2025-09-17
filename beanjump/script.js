@@ -229,10 +229,10 @@ class Vegetable {
 		};
 
 		this.amplitude = parseInt(document.getElementById('amplitude_input').value);
-		this.wavelength = parseInt(document.getElementById('wavelength_input').value);
+		this.wavelength = parseFloat(document.getElementById('wavelength_input').value);
 		this.offset = parseInt(document.getElementById('offset_input').value);
 
-		console.log('read values: ' + this.amplitude + '\t' + this.wavelength + '\t' + this.offset);
+		// console.log('read values: ' + this.amplitude + '\t' + this.wavelength + '\t' + this.offset);
 
 	}
 
