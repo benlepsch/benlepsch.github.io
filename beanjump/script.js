@@ -108,6 +108,9 @@ class FloatyText {
 	}
 }
 
+amplitude = 100;
+wavelength = 0.01;
+
 class VegetableManager {
 	constructor() {
 		this.veggies = []; // holds Vegetable objects
@@ -227,8 +230,6 @@ class Vegetable {
 			'cabbage': 130,
 			'carrot': 300
 		};
-		this.amplitude = 1;
-		this.wavelength = 1;
 	}
 
 	// create the image and blit onto screen
@@ -269,7 +270,7 @@ class Vegetable {
 			this.rep.style.left = parseInt(this.rep.style.left) + this.speed + 'px';
 
 			if (wavy) {
-				this.rep.style.top = this.start_ys[this.type] + (this.amplitude*Math.sin(this.wavelength*parseInt(this.rep.style.left)));
+				this.rep.style.top = this.start_ys[this.type] + (amplitude*Math.sin(wavelength*parseInt(this.rep.style.left))) + 'px';
 			}
 
 		} else {
