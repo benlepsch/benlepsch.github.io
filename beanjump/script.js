@@ -108,10 +108,6 @@ class FloatyText {
 	}
 }
 
-let amplitude = 90;
-let wavelength = 0.01;
-let wave_offset = -25;
-
 class VegetableManager {
 	constructor() {
 		this.veggies = []; // holds Vegetable objects
@@ -231,6 +227,11 @@ class Vegetable {
 			'cabbage': 130,
 			'carrot': 300
 		};
+
+		this.amplitude = parseInt(document.getElementById('amplitude_input').value);
+		this.wavelength = parseInt(document.getElementById('wavelength_input').value);
+		this.offset = parseInt(document.getElementById('offset_input').value);
+
 	}
 
 	// create the image and blit onto screen
@@ -271,7 +272,7 @@ class Vegetable {
 			this.rep.style.left = parseInt(this.rep.style.left) + this.speed + 'px';
 
 			if (wavy) {
-				this.rep.style.top = base_y + player.rep.clientHeight - this.start_ys[this.type] + (amplitude*Math.sin(wavelength*parseInt(this.rep.style.left))) + wave_offset + 'px';
+				this.rep.style.top = base_y + player.rep.clientHeight - this.start_ys[this.type] + (this.amplitude*Math.sin(this.wavelength*parseInt(this.rep.style.left))) + this.offset + 'px';
 			}
 
 		} else {
@@ -533,6 +534,13 @@ function wideIt() {
 let wavy = false;
 function waveMode() {
 	wavy = !wavy;
+
+	if (wavy) {
+		document.getElementById('wave_mods').style.display = 'block';
+	} else {
+		document.getElementById('wave_mods').style.display = 'none';
+	}
+	
 	alert('wave mode has been ' + (wavy ? 'enabled' : 'disabled'));
 }
 

@@ -29,6 +29,17 @@
         <br>
         <button onclick="changeCarrots()">carrots only</button>
         <button onclick="wideIt()">wide mode</button>
+        <button onclick="waveMode()">wave mode (experimental)</button>
+
+        <div id="wave_mods" style="display: none">
+          <p>
+            parameters for the wave mode<br>
+            recommended settings: amplitude 90, wavelength 0.01, offset -25
+          </p>
+          amplitude: <input id="amplitude_input" value="90">
+          wavelength: <input id="wavelength_input" value="0.01">
+          offset: <input id="offset_input" value="-25">
+        </div>
       </p>
     </div>
 
