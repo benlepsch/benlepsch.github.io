@@ -108,8 +108,9 @@ class FloatyText {
 	}
 }
 
-amplitude = 100;
-wavelength = 0.01;
+let amplitude = 90;
+let wavelength = 0.01;
+let wave_offset = -25;
 
 class VegetableManager {
 	constructor() {
@@ -270,7 +271,7 @@ class Vegetable {
 			this.rep.style.left = parseInt(this.rep.style.left) + this.speed + 'px';
 
 			if (wavy) {
-				this.rep.style.top = base_y + player.rep.clientHeight - this.start_ys[this.type] + (amplitude*Math.sin(wavelength*parseInt(this.rep.style.left))) + 'px';
+				this.rep.style.top = base_y + player.rep.clientHeight - this.start_ys[this.type] + (amplitude*Math.sin(wavelength*parseInt(this.rep.style.left))) + wave_offset + 'px';
 			}
 
 		} else {
