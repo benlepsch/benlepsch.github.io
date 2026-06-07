@@ -228,6 +228,18 @@
     ],
     "cooksey_drive": [
         {
+            "name": "Alcove",
+            "grade": "5.6",
+            "site": "top",
+            "fortym": "yes",
+            "pic": ["images/cooksey_drive/boulder_private.png"],
+            "anchor": [
+                "images/cooksey_drive/private_anchor_0.png",
+                "images/cooksey_drive/private_anchor_1.png"
+            ],
+            "beta": "Easy start. At first big ledge, can go left straight out the roof on high feet (harder) or go right onto the arete. Right version has reachy move for a right handhold, then huge right foot to stand on. For the final roof, get a high left and higher right handhold, smear feet and bump left hand over the edge to jugs."
+        },
+        {
             "name": "Boulder Anchor",
             "grade": "5.3/4",
             "site": "top",
@@ -240,16 +252,15 @@
             "beta": "Hardest move at the start, work feet out to the right and grab two low crimps to help stand up. Bump left foot high and reach for the jug straight ahead, walk up the rest of the route."
         },
         {
-            "name": "No Trespassing",
-            "grade": "5.6",
+            "name": "Big Purp",
+            "grade": "5.5",
             "site": "top",
             "fortym": "yes",
-            "pic": ["images/cooksey_drive/boulder_private.png"],
-            "anchor": [
-                "images/cooksey_drive/private_anchor_0.png",
-                "images/cooksey_drive/private_anchor_1.png"
-            ],
-            "beta": "Easy start. At first big ledge, can go left up the face on high feet (harder) or go right onto the arete. Right version has reachy move for a right handhold, then huge right foot to stand on. For the final roof, get a high left and higher right handhold, smear feet and bump left hand over the edge to jugs."
+            "pic": [],
+            "pic_txt": "to the skiier's right of the arete. top manage from the big shelf just under the main cliff edge",
+            "anchor": [],
+            "anchor_txt": "big purp!! + other gear around. easy anchor",
+            "beta": "high feet and beached whale move to start, then easy laybacking"
         },
         {
             "name": "Cooksey Arete",
@@ -270,6 +281,17 @@
             "anchor": [],
             "anchor_txt": "Same placements as for arete, either get a huge quad or just re equalize",
             "beta": "High feet and decent but powerful hands the whole way, karate chop move midway up with left hand into the undercling/jam."
+        },
+        {
+            "name": "Chimney",
+            "grade": "5.5/9",
+            "site": "top",
+            "fortym": "yes",
+            "pic": [],
+            "pic_txt": "far skiiers left",
+            "anchor": [],
+            "anchor_txt": "mid #2 + 0.3 + 1. can sorta fit big purp in in front of the 2 but its a pretty bad placement",
+            "beta": "lowering all the way down has a hard 5.9 move off the deck on sometimes slimy holds. the rest of the chimney climb is chiller but still 5.7ish, then the top section right up the face looks blank but is fairly easy with good feet"
         }
     ],
     "ocean_drive": [
